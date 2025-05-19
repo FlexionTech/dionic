@@ -1,0 +1,159 @@
+/* Light Mode Styles (default) */
+:root {
+    --body-bg: #DBD5C3;
+    --body-color: #52552B;
+    --card-bg: #D3CCB6;
+    --card-border: rgba(0, 0, 0, 0.125);
+    --input-bg: #E2DECF;
+    --input-color: #212529;
+    --header-border: rgba(0, 0, 0, 0.125);
+    --footer-border: rgba(0, 0, 0, 0.125);
+}
+
+/* Dark Mode Styles */
+[data-bs-theme="dark"] {
+    --body-bg: #1A1B0E;
+    --body-color: #DBD5C3;
+    --card-bg: #202211    ;
+    --card-border: rgba(255, 255, 255, 0.125);
+    --input-bg: #101109;
+    --input-color: #DBD5C3;
+    --header-border: rgba(255, 255, 255, 0.125);
+    --footer-border: rgba(255, 255, 255, 0.125);
+}
+
+      html {
+            scroll-behavior: smooth;
+        }
+ 
+/* Apply theme variables */
+body {
+    background-color: var(--body-bg);
+    color: var(--body-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure all text uses the theme's text color */
+p, h1, h2, h3, h4, h5, h6, span, div, li, a:not(.btn), label {
+    color: var(--body-color);
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+}
+
+.card-body {
+    color: var(--body-color);
+}
+
+.card-title, .card-text {
+    color: var(--body-color);
+}
+
+.form-control {
+    background-color: var(--input-bg);
+    color: var(--input-color);
+    border-color: var(--card-border);
+}
+
+.form-label {
+    color: var(--body-color);
+}
+
+header.border-bottom {
+    border-color: var(--header-border) !important;
+    background-color: var(--card-bg);
+}
+
+footer.border-top {
+    border-color: var(--footer-border) !important;
+    background-color: var(--card-bg);
+    color: var(--body-color);
+}
+
+/* Make the main content take up available space */
+main {
+    flex: 1;
+}
+
+/* Card hover effect */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Social links styling */
+.social-links a {
+    color: var(--bs-secondary);
+    transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--bs-primary);
+}
+
+/* Focus styling for accessibility */
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 3px solid var(--bs-primary);
+    outline-offset: 2px;
+}
+
+/* Custom styling for the theme toggle button */
+.theme-toggle .btn {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Additional accessibility improvements */
+.invalid-feedback {
+    font-weight: bold;
+}
+
+/* For screen readers only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--custom-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bs-secondary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bs-primary);
+}
+
+/* Ensure footer stays at bottom */
+footer {
+    margin-top: auto;
+}
