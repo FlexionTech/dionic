@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dionic</title>
+</head>
+
+    <body data-bs-theme="auto">
+    <button id="theme-toggle-btn" aria-label="Toggle theme">Theme</button>
+
+    <header style="display: flex; align-items: center;">
+        <img src="/images/dionic_logo.png" alt="Logo" width="50" style="height: auto; margin-right: 10px;">
+        <h1>DIONIC</h1>
+    </header>
+
+    <nav>
+        <a href="#profile">Profile</a>
+        <a href="#services">DIONIC Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main class="container">
+        <section id="profile" class="profile">
+            <h2>Profile</h2>
+            <p>Hello! I'm Dr Di Ashworth, the heart and founder of DIONIC. As a Social Worker with a rich and varied career, I bring a unique depth of understanding to my work. My experience spans supporting people with disabilities, guiding students as a lecturer, and providing crucial counseling services.
+My journey includes firsthand involvement with the National Disability Insurance Scheme (NDIS) as a Planner, where I had gained valuable insights into the support landscape. I  had also contributed my expertise at Vision Australia (VA), coordinating the Quality Living program, and at Women’s Information Referral Exchange (WIRE) as a Counsellor.
+Driven by a passion for understanding the human experience, my Doctor of Philosophy (PhD) explored young people's identity development. My commitment to innovation is further highlighted by the participation as the first research participant in the Australian Bionic Eye project. 
+Today, my combined professional skills with the personal experience of vision loss to ensure digital spaces are accessible to all, testing web content with the JAWS screen reader.
+This blend of professional expertise and lived experience provides Di with a holistic perspective, enabling me to offer support that goes beyond standard practice. My vision for DIONIC is rooted in a deep desire to work alongside individuals living with vision loss, fostering their strength and resilience.</p>
+        </section>
+
+        <section id="services" class="services">
+            <h2>DIONIC Services</h2>
+            <ul>
+                <li>COUNSELLING</li>
+                <li>EDUCATION</li>
+                <li>ACCESSIBILITY</li>
+            </ul>
+        </section>
+   </main>
+
+    <footer>
+        <section id="contact">
+            <p>Contact: admin@dionic.com.au| Phone: 0422 929 662</p>
+        </section>
+        <p>&copy; Dr Di Ashworth</p>
+    </footer>
+</body>
+<script>
+                // Simple theme toggle function
+                function toggleTheme() {
+                    const body = document.body;
+                    
+                    if (body.getAttribute('data-bs-theme') === 'dark') {
+                        // Switch to light mode
+                        body.setAttribute('data-bs-theme', 'light');
+                        localStorage.setItem('theme', 'light');
+                    } else {
+                        // Switch to dark mode
+                        body.setAttribute('data-bs-theme', 'dark');
+                        localStorage.setItem('theme', 'dark');
+                    }
+                }
+                
+                // Set initial theme on page load
+                document.addEventListener('DOMContentLoaded', function() {
+                    const savedTheme = localStorage.getItem('theme');
+                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+
+    
+    // Theme toggle functionality
+    themeToggleBtn.onclick = function() {
+        const body = document.body;
+        if (body.getAttribute('data-bs-theme') === 'dark') {
+            body.setAttribute('data-bs-theme', 'light');
+            lightIcon.style.display = 'none';
+            darkIcon.style.display = 'inline-block';
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.setAttribute('data-bs-theme', 'dark');
+            lightIcon.style.display = 'inline-block';
+            darkIcon.style.display = 'none';
+            localStorage.setItem('theme', 'dark');
+        }
+    };
+    
+                    
+                    // Apply saved theme or use system preference
+                    if (savedTheme) {
+                        document.body.setAttribute('data-bs-theme', savedTheme);
+                        
+                        if (savedTheme === 'dark') {
+                            lightIcon.style.display = 'inline-block';
+                            darkIcon.style.display = 'none';
+                        } else {
+                            lightIcon.style.display = 'none';
+                            darkIcon.style.display = 'inline-block';
+                        }
+                    } else if (prefersDark) {
+                        document.body.setAttribute('data-bs-theme', 'dark');
+                        lightIcon.style.display = 'inline-block';
+                        darkIcon.style.display = 'none';
+                    }
+                });
+            </script>
+</html>

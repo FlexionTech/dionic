@@ -1,106 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Dionic</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Dionic</title>
+  <style>
+    body[data-bs-theme="light"] {
+      color: #222222;
+      background-color: #ffffff;
+    }
+
+    body[data-bs-theme="dark"] {
+      color: #eeeeee;
+      background-color: #121212;
+    }
+
+    #theme-toggle-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 9999;
+      padding: 8px 12px;
+      background-color: currentColor;
+      border: 1px solid currentColor;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      display: inline-block;
+      width: auto;
+    }
+
+    body[data-bs-theme="light"] #theme-toggle-btn {
+      color: white;
+    }
+
+    body[data-bs-theme="dark"] #theme-toggle-btn {
+      color: black;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      padding: 1rem;
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--body-color);
+      font-weight: 500;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      background-color: var(--input-bg);
+      color: var(--input-color);
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+    }
+
+    form button {
+      padding: 8px 16px;
+      background-color: var(--body-color);
+      color: var(--body-bg);
+      border: 1px solid var(--body-color);
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    form h2 {
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body data-bs-theme="auto">
-    <header>
-        <h1>Dionic</h1>
-    </header>
+  <button id="theme-toggle-btn" aria-label="Toggle theme">Theme</button>
 
-    <nav>
-        <a href="#profile">Profile</a>
-        <a href="#services">DIONIC Services</a>
-        <a href="#contact">Contact</a>
-        <button id="theme-toggle-btn">theme</button>
-    </nav>
+  <header style="display: flex; align-items: center;">
+    <img src="/images/dionic_logo.png" alt="Logo" width="50" style="height: auto; margin-right: 10px" />
+    <h1>DIONIC</h1>
+  </header>
 
-    <main class="container">
-        <section id="profile" class="profile">
-            <h2>Profile</h2>
-            <p>Hello! I'm Dr Di Ashworth, the heart and founder of DIONIC. As a Social Worker with a rich and varied career, I bring a unique depth of understanding to my work. My experience spans supporting people with disabilities, guiding students as a lecturer, and providing crucial counseling services.
+  <nav>
+    <a href="#profile">Profile</a>
+    <a href="#services">DIONIC Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main class="container">
+    <section id="profile" class="profile">
+      <h2>Profile</h2>
+      <p> Hello! I'm Dr Di Ashworth, the heart and founder of DIONIC. As a Social Worker with a rich and varied career, I bring a unique depth of understanding to my work. My experience spans supporting people with disabilities, guiding students as a lecturer, and providing crucial counseling services.
 My journey includes firsthand involvement with the National Disability Insurance Scheme (NDIS) as a Planner, where I had gained valuable insights into the support landscape. I  had also contributed my expertise at Vision Australia (VA), coordinating the Quality Living program, and at Women’s Information Referral Exchange (WIRE) as a Counsellor.
 Driven by a passion for understanding the human experience, my Doctor of Philosophy (PhD) explored young people's identity development. My commitment to innovation is further highlighted by the participation as the first research participant in the Australian Bionic Eye project. 
 Today, my combined professional skills with the personal experience of vision loss to ensure digital spaces are accessible to all, testing web content with the JAWS screen reader.
 This blend of professional expertise and lived experience provides Di with a holistic perspective, enabling me to offer support that goes beyond standard practice. My vision for DIONIC is rooted in a deep desire to work alongside individuals living with vision loss, fostering their strength and resilience.</p>
-        </section>
+    </section>
 
-        <section id="services" class="services">
-            <h2>DIONIC Services</h2>
-            <ul>
-                <li>COUNSELLING</li>
-                <li>EDUCATION</li>
-                <li>ACCESSIBILITY</li>
-            </ul>
-        </section>
-   </main>
+    <section id="services" class="services">
+      <h2>DIONIC Services</h2>
+      <ul>
+        <li>COUNSELLING</li>
+        <li>EDUCATION</li>
+        <li>ACCESSIBILITY</li>
+      </ul>
+    </section>
+  </main>
 
-    <footer>
-        <section id="contact">
-            <p>Contact: admin@dionic.com.au| Phone: 0422 929 662</p>
-        </section>
-        <p>&copy; Dr Di Ashworth</p>
-    </footer>
+  <!-- Contact Form Section -->
+  <section id="contact-form">
+  <h2>Contact Us</h2>
+  <form id="contactForm" novalidate>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required />
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required />
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="contactNumber">Contact Number:</label>
+    <input type="tel" id="contactNumber" name="contactNumber"
+           pattern="[0-9]{10}" required
+           title="Enter a 10-digit number with no spaces or symbols" />
+
+    <label for="reason">Reason for Contact:</label>
+    <textarea id="reason" name="reason" rows="4" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+  <footer>
+    <section id="contact">
+      <p>Contact: admin@dionic.com.au | Phone: 0422 929 662</p>
+    </section>
+    <p>&copy; Dr Di Ashworth</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const themeToggleBtn = document.getElementById("theme-toggle-btn");
+      const body = document.body;
+
+      if (savedTheme === "light" || savedTheme === "dark") {
+        body.setAttribute("data-bs-theme", savedTheme);
+      } else {
+        body.setAttribute("data-bs-theme", prefersDark ? "dark" : "light");
+      }
+
+      themeToggleBtn.onclick = function () {
+        const currentTheme = body.getAttribute("data-bs-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        body.setAttribute("data-bs-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      };
+    });
+  </script>
 </body>
-<script>
-                // Simple theme toggle function
-                function toggleTheme() {
-                    const body = document.body;
-                    
-                    if (body.getAttribute('data-bs-theme') === 'dark') {
-                        // Switch to light mode
-                        body.setAttribute('data-bs-theme', 'light');
-                        localStorage.setItem('theme', 'light');
-                    } else {
-                        // Switch to dark mode
-                        body.setAttribute('data-bs-theme', 'dark');
-                        localStorage.setItem('theme', 'dark');
-                    }
-                }
-                
-                // Set initial theme on page load
-                document.addEventListener('DOMContentLoaded', function() {
-                    const savedTheme = localStorage.getItem('theme');
-                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    const themeToggleBtn = document.getElementById('theme-toggle-btn');
-
-    
-    // Theme toggle functionality
-    themeToggleBtn.onclick = function() {
-        const body = document.body;
-        if (body.getAttribute('data-bs-theme') === 'dark') {
-            body.setAttribute('data-bs-theme', 'light');
-            lightIcon.style.display = 'none';
-            darkIcon.style.display = 'inline-block';
-            localStorage.setItem('theme', 'light');
-        } else {
-            body.setAttribute('data-bs-theme', 'dark');
-            lightIcon.style.display = 'inline-block';
-            darkIcon.style.display = 'none';
-            localStorage.setItem('theme', 'dark');
-        }
-    };
-    
-                    
-                    // Apply saved theme or use system preference
-                    if (savedTheme) {
-                        document.body.setAttribute('data-bs-theme', savedTheme);
-                        
-                        if (savedTheme === 'dark') {
-                            lightIcon.style.display = 'inline-block';
-                            darkIcon.style.display = 'none';
-                        } else {
-                            lightIcon.style.display = 'none';
-                            darkIcon.style.display = 'inline-block';
-                        }
-                    } else if (prefersDark) {
-                        document.body.setAttribute('data-bs-theme', 'dark');
-                        lightIcon.style.display = 'inline-block';
-                        darkIcon.style.display = 'none';
-                    }
-                });
-            </script>
 </html>
