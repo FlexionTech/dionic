@@ -3,171 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
   <title>Dionic</title>
-  <style>
-    body[data-bs-theme="light"] {
-      color: #222222;
-      background-color: #ffffff;
-    }
-
-    body[data-bs-theme="dark"] {
-      color: #eeeeee;
-      background-color: #121212;
-    }
-
-    #theme-toggle-btn {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      z-index: 9999;
-      padding: 8px 12px;
-      background-color: currentColor;
-      border: 1px solid currentColor;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      display: inline-block;
-      width: auto;
-    }
-
-    body[data-bs-theme="light"] #theme-toggle-btn {
-      color: white;
-    }
-
-    body[data-bs-theme="dark"] #theme-toggle-btn {
-      color: black;
-    }
-
-    form {
-      max-width: 600px;
-      margin: 0 auto 2rem auto;
-      padding: 1rem;
-      background-color: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 8px;
-    }
-
-    form label {
-      display: block;
-      margin-bottom: 0.25rem;
-      color: var(--body-color);
-      font-weight: 500;
-    }
-
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      background-color: var(--input-bg);
-      color: var(--input-color);
-      border: 1px solid var(--card-border);
-      border-radius: 4px;
-    }
-
-    form button {
-      padding: 8px 16px;
-      background-color: var(--body-color);
-      color: var(--body-bg);
-      border: 1px solid var(--body-color);
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    form h2 {
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body data-bs-theme="auto">
-  <button id="theme-toggle-btn" aria-label="Toggle theme">Theme</button>
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+    <span id="theme-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="12" cy="12" r="5" />
+      </svg>
+    </span>
+  </button>
 
-  <header style="display: flex; align-items: center;">
-    <img src="/images/dionic_logo.png" alt="Logo" width="50" style="height: auto; margin-right: 10px" />
-    <h1>DIONIC</h1>
-  </header>
+  <div class="content-wrapper">
+    <!-- Header -->
+    <header class="title-bar">
+      <div class="title-bar-content">
+        <img src="/images/dionic_logo.png" alt="Dionic Logo" class="logo" />
+        <h1 class="site-title">DIONIC</h1>
+      </div>
+    </header>
 
-  <nav>
-    <a href="#profile">Profile</a>
-    <a href="#services">DIONIC Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <!-- Navigation -->
+    <nav>
+      <a href="#profile">Profile</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <main class="container">
-    <section id="profile" class="profile">
-      <h2>Profile</h2>
-      <p> Hello! I'm Dr Di Ashworth, the heart and founder of DIONIC. As a Social Worker with a rich and varied career, I bring a unique depth of understanding to my work. My experience spans supporting people with disabilities, guiding students as a lecturer, and providing crucial counseling services.
-My journey includes firsthand involvement with the National Disability Insurance Scheme (NDIS) as a Planner, where I had gained valuable insights into the support landscape. I  had also contributed my expertise at Vision Australia (VA), coordinating the Quality Living program, and at Women’s Information Referral Exchange (WIRE) as a Counsellor.
-Driven by a passion for understanding the human experience, my Doctor of Philosophy (PhD) explored young people's identity development. My commitment to innovation is further highlighted by the participation as the first research participant in the Australian Bionic Eye project. 
-Today, my combined professional skills with the personal experience of vision loss to ensure digital spaces are accessible to all, testing web content with the JAWS screen reader.
-This blend of professional expertise and lived experience provides Di with a holistic perspective, enabling me to offer support that goes beyond standard practice. My vision for DIONIC is rooted in a deep desire to work alongside individuals living with vision loss, fostering their strength and resilience.</p>
-    </section>
+    <!-- Main Content -->
+    <main>
+      <!-- Profile Section -->
+      <section id="profile">
+        <h2>Profile</h2>
+        <p>
+          Hello! I'm Dr. Di Ashworth, the heart and founder of DIONIC. As a Social Worker with a rich and varied career, I bring a unique depth of understanding to my work. My experience spans supporting people with disabilities, guiding students as a lecturer, and providing crucial counseling services.
+        </p>
+        <p>
+          My journey includes firsthand involvement with the National Disability Insurance Scheme (NDIS) as a Planner, where I gained valuable insights into the support landscape. I’ve also contributed my expertise at Vision Australia (VA), coordinating the Quality Living program, and at Women’s Information Referral Exchange (WIRE) as a Counsellor.
+        </p>
+        <p>
+          Driven by a passion for understanding the human experience, my PhD explored young people's identity development. My commitment to innovation is further highlighted by participating as the first research participant in the Australian Bionic Eye project.
+        </p>
+        <p>
+          Today, I combine professional skills with personal experience of vision loss to ensure digital spaces are accessible to all, testing web content with the JAWS screen reader. My vision for DIONIC is rooted in working alongside individuals living with vision loss, fostering strength and resilience.
+        </p>
+      </section>
 
-    <section id="services" class="services">
-      <h2>DIONIC Services</h2>
-      <ul>
-        <li>COUNSELLING</li>
-        <li>EDUCATION</li>
-        <li>ACCESSIBILITY</li>
-      </ul>
-    </section>
-  </main>
+      <!-- Services Section -->
+      <section id="services">
+        <h2>DIONIC Services</h2>
+        <ul>
+          <li>COUNSELLING</li>
+          <li>EDUCATION</li>
+          <li>ACCESSIBILITY</li>
+        </ul>
+      </section>
 
-  <!-- Contact Form Section -->
-  <section id="contact-form">
-  <h2>Contact Us</h2>
-  <form id="contactForm" novalidate>
-    <label for="firstName">First Name:</label>
-    <input type="text" id="firstName" name="firstName" required />
+      <!-- Contact Section -->
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <label for="firstName">First Name: <span class="required">*</span></label>
+          <input type="text" id="firstName" name="firstName" required />
 
-    <label for="lastName">Last Name:</label>
-    <input type="text" id="lastName" name="lastName" required />
+          <label for="lastName">Last Name: <span class="required">*</span></label>
+          <input type="text" id="lastName" name="lastName" required />
 
-    <label for="email">Email Address:</label>
-    <input type="email" id="email" name="email" required />
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required />
 
-    <label for="contactNumber">Contact Number:</label>
-    <input type="tel" id="contactNumber" name="contactNumber"
-           pattern="[0-9]{10}" required
-           title="Enter a 10-digit number with no spaces or symbols" />
+          <label for="contactNumber">Contact Number: <span class="required">*</span></label>
+          <input type="tel" id="contactNumber" name="contactNumber"
+                pattern="[0-9]{10}" required
+                title="Enter a 10-digit number with no spaces or symbols" />
 
-    <label for="reason">Reason for Contact:</label>
-    <textarea id="reason" name="reason" rows="4" required></textarea>
+          <label for="reason">Reason for Contact:</label>
+          <textarea id="reason" name="reason" rows="4" required></textarea>
 
-    <button type="submit">Submit</button>
-  </form>
-</section>
+          <button type="submit">Submit</button>
+        </form>
 
-  <footer>
-    <section id="contact">
-      <p>Contact: admin@dionic.com.au | Phone: 0422 929 662</p>
-    </section>
-    <p>&copy; Dr Di Ashworth</p>
-  </footer>
 
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>Contact: <a href="mailto:admin@dionic.com.au">admin@dionic.com.au</a> | Phone: 0422 929 662</p>
+      <p>&copy; Dr Di Ashworth</p>
+    </footer>
+  </div>
+
+  <!-- Theme Toggle Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const savedTheme = localStorage.getItem("theme");
       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       const themeToggleBtn = document.getElementById("theme-toggle-btn");
+      const iconSpan = document.getElementById("theme-icon");
       const body = document.body;
 
-      if (savedTheme === "light" || savedTheme === "dark") {
-        body.setAttribute("data-bs-theme", savedTheme);
-      } else {
-        body.setAttribute("data-bs-theme", prefersDark ? "dark" : "light");
+      const sunIcon = `
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+          <circle cx="12" cy="12" r="5"/>
+          <g stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </g>
+        </svg>`;
+
+      const moonIcon = `
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+          <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
+        </svg>`;
+
+      function updateIcon(theme) {
+        iconSpan.innerHTML = theme === "dark" ? sunIcon : moonIcon;
+        themeToggleBtn.title = theme === "dark" ? "Switch to light theme" : "Switch to dark theme";
       }
+
+      const initialTheme = savedTheme === "light" || savedTheme === "dark"
+        ? savedTheme
+        : (prefersDark ? "dark" : "light");
+
+      body.setAttribute("data-bs-theme", initialTheme);
+      updateIcon(initialTheme);
 
       themeToggleBtn.onclick = function () {
         const currentTheme = body.getAttribute("data-bs-theme");
         const newTheme = currentTheme === "dark" ? "light" : "dark";
         body.setAttribute("data-bs-theme", newTheme);
         localStorage.setItem("theme", newTheme);
+        updateIcon(newTheme);
       };
     });
-  </script>
+  
+  /* Success response upon contact form submission*/
+  window.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" }
+      })
+        .then(response => {
+          if (response.ok) {
+            form.innerHTML = "<p>Thanks for your message! I'll get back to you soon.</p>";
+          } else {
+            form.innerHTML = "<p>Oops! There was a problem. Please try again later.</p>";
+          }
+        })
+        .catch(() => {
+          form.innerHTML = "<p>There was a problem. Please try again later.</p>";
+        });
+    });
+  });
+
+  
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    if (!this.checkValidity()) {
+      e.preventDefault(); // Prevent form submission
+      alert("Please fill in all required fields correctly.");
+    }
+  });
+
+
+/*Highlights in red when user leaves input field unfilled*/
+const fields = ['firstName', 'lastName', 'contactNumber'];
+  fields.forEach(id => {
+    const input = document.getElementById(id);
+    input.addEventListener('focusout', () => {
+      if (!input.checkValidity()) {
+        input.style.borderColor = 'red';
+        input.style.boxShadow = '0 0 4px red';
+      } else {
+        input.style.borderColor = '';
+        input.style.boxShadow = '';
+      }
+    });
+
+    input.addEventListener('input', () => {
+      input.style.borderColor = '';
+      input.style.boxShadow = '';
+    });
+  });
+
+</script>
+
 </body>
 </html>
