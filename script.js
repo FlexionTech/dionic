@@ -99,26 +99,26 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        const menuBtn = document.getElementById("menu-btn");
-        const sidebar = document.getElementById("sidebar");
-        const closeBtn = document.getElementById("close-btn");
-        const overlay = document.getElementById("overlay");
+        const menuBtn = document.getElementById('menu-btn');
+        const menuDialog = document.getElementById('menu-dialog');
+        const closeDialog = document.getElementById('close-dialog');
 
-        function openSidebar() {
-        sidebar.classList.add("open");
-        overlay.classList.add("visible");
+        // Toggle menu dialog
+        menuBtn.addEventListener('click', () => {
+        menuDialog.classList.toggle('show');
+        });
+
+        // Close on "x"
+        closeDialog.addEventListener('click', () => {
+        menuDialog.classList.remove('show');
+        });
+
+        // Optional: Close on outside click
+        document.addEventListener('click', (e) => {
+        if (
+            !menuDialog.contains(e.target) &&
+            !menuBtn.contains(e.target)
+        ) {
+            menuDialog.classList.remove('show');
         }
-
-        function closeSidebar() {
-        sidebar.classList.remove("open");
-        overlay.classList.remove("visible");
-        }
-
-        menuBtn.addEventListener("click", openSidebar);
-        closeBtn.addEventListener("click", closeSidebar);
-        overlay.addEventListener("click", closeSidebar);
-
-        const menuLinks = document.querySelectorAll(".side-nav a");
-        menuLinks.forEach(link => {
-            link.addEventListener("click", closeSidebar);
         });
