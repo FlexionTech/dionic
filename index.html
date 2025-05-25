@@ -76,6 +76,7 @@
             <section id="contact">
                 <h2>Contact Us</h2>
                 <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+                   <div class="form-group">
                     <label for="firstName">First Name: <span class="required">*</span></label>
                     <input type="text" id="firstName" name="firstName" required />
 
@@ -91,8 +92,9 @@
 
                     <label for="reason">Reason for Contact:</label>
                     <textarea id="reason" name="reason" rows="4" required></textarea>
-
+                    </div>
                     <button type="submit">Submit</button>
+                    
                 </form>
 
 
