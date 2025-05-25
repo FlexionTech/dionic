@@ -331,7 +331,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
  /* border-radius: 50px;*/
 }
 
-.header-nav a {
+.header-nav * {
   text-decoration: none;
   color: var(--nav-text);
   font-weight: bold;
@@ -340,7 +340,6 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 
 .header-nav a:hover {
   text-decoration: underline;
-  font-size: 20px;
 }
 
 [data-bs-theme="light"] .header-nav {
@@ -464,4 +463,21 @@ nav a:hover {
 }
 .side-nav a:hover {
   color: var(--button-bg);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1100px;
+  padding: 0 1rem;
+}
+
+.marginAuto {
+  margin: 0 auto;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
