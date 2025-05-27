@@ -1,133 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="icon" href="images/favicon.png" type="image/png" />
     <title>Dionic</title>
     <link rel="stylesheet" href="styles.css" />
-</head>
+  </head>
 
-<body data-bs-theme="auto">
-
+  <body data-bs-theme="auto">
     <div class="content-wrapper">
-        <!-- Header -->
-        <header class="title-bar">
-            <div class="title-bar-content">
+      <!-- Header -->
+      <header class="title-bar">
+        <div class="title-bar-content">
+          <!-- Brand: logo + title side-by-side -->
+          <div class="brand">
+            <img src="images/dionic_logo.png" alt="Logo" class="logo" />
+            <h1 class="site-title">DIONIC</h1>
+          </div>
 
-                <!-- Brand: logo + title side-by-side -->
-                <div class="brand">
-                    <img src="images/dionic_logo.png" alt="Logo" class="logo" />
-                    <h1 class="site-title">DIONIC</h1>
-                </div>
+          <!-- Theme Toggle Button -->
+          <button
+            id="theme-toggle-btn"
+            aria-label="Toggle theme"
+            title="Toggle theme"
+          >
+            <span id="theme-icon"></span>
+          </button>
 
-                <!-- Theme Toggle Button -->
-                <button id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
-                    <span id="theme-icon"></span>
-                </button>
+          <!-- Mobile Menu Button -->
+          <button id="menu-btn" aria-label="Open menu">&#9776;</button>
 
-                <!-- Mobile Menu Button -->
-                <button id="menu-btn" aria-label="Open menu">&#9776;</button>
-
-                <!-- Floating Dialog Menu -->
-                <div id="menu-dialog" class="menu-dialog">
-                    <button id="close-dialog" aria-label="Close menu">&times;</button>
-                    <nav class="dialog-nav">
-                        <a href="#profile">Profile</a>
-                        <a href="#services">Services</a>
-                        <a href="#contact">Contact</a>
-                    </nav>
-                </div>
-
-            </div>
-
-            <!-- Main nav for desktop -->
-            <nav class="header-nav">
-                <a href="#profile">Profile</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
+          <!-- Floating Dialog Menu -->
+          <div id="menu-dialog" class="menu-dialog">
+            <button id="close-dialog" aria-label="Close menu">&times;</button>
+            <nav class="dialog-nav">
+              <a href="#profile">Profile</a>
+              <a href="#services">Services</a>
+              <a href="#contact">Contact</a>
             </nav>
-        </header>
+          </div>
+        </div>
 
+        <!-- Main nav for desktop -->
+        <nav class="header-nav">
+          <a href="#profile">Profile</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-        <!-- Main Content -->
-        <main>
-            <!-- Profile Section -->
-            <section id="profile">
-                <h2>Profile</h2>
-                <p>
-                    Hello! I'm Dr. Di Ashworth, the heart and founder of DIONIC. As a Social Worker with a rich and
-                    varied career, I bring a unique depth of understanding to my work. My experience spans supporting
-                    people with disabilities, guiding students as a lecturer, and providing crucial counseling services.
-                </p>
-                <p>
-                    My journey includes firsthand involvement with the National Disability Insurance Scheme (NDIS) as a
-                    Planner, where I gained valuable insights into the support landscape. I’ve also contributed my
-                    expertise at Vision Australia (VA), coordinating the Quality Living program, and at Women’s
-                    Information Referral Exchange (WIRE) as a Counsellor.
-                </p>
-                <p>
-                    Driven by a passion for understanding the human experience, my PhD explored young people's identity
-                    development. My commitment to innovation is further highlighted by participating as the first
-                    research participant in the Australian Bionic Eye project.
-                </p>
-                <p>
-                    Today, I combine professional skills with personal experience of vision loss to ensure digital
-                    spaces are accessible to all, testing web content with the JAWS screen reader. My vision for DIONIC
-                    is rooted in working alongside individuals living with vision loss, fostering strength and
-                    resilience.
-                </p>
-            </section>
+      <!-- Main Content -->
+      <main>
+        <!-- Profile Section -->
+        <section id="profile">
+          <h2>Dr Di Ashworth – Founder of DIONIC</h2>
+          <p>
+            Dr Di Ashworth is the founder of DIONIC and a dedicated Social
+            Worker with a diverse and rich background in disability support,
+            education, counselling, and research. Di brings a holistic and
+            deeply personal perspective to her work, shaped by both professional
+            expertise and lived experience.
+          </p>
+          <p>
+            Her journey includes firsthand involvement with the National
+            Disability Insurance Scheme (NDIS) as a Planner, where she had
+            gained valuable insights into the support landscape. She have also
+            contributed my expertise at Vision Australia (VA), coordinating the
+            Quality Living program, and at Women’s Information Referral Exchange
+            (WIRE) as a Counsellor.
+          </p>
+          <p>
+            Driven by a passion for understanding the human experience, my PhD
+            explored young people's identity development. Dr Di Ashworth's
+            commitment to innovation is further highlighted by participating as
+            the first research participant in the Australian Bionic Eye project.
+          </p>
+          <p>
+            Today, her combined professional skills with personal experience of
+            vision loss to ensure digital spaces are accessible to all, testing
+            web content with the JAWS screen reader. Dr Di Ashworth vision for
+            DIONIC is rooted in working alongside individuals living with vision
+            loss, fostering strength and resilience.
+          </p>
+        </section>
 
-            <!-- Services Section -->
-            <section id="services">
-                <h2>DIONIC Services</h2>
-                <ul>
-                    <li>COUNSELLING</li>
-                    <li>EDUCATION</li>
-                    <li>ACCESSIBILITY</li>
-                </ul>
-            </section>
+        <!-- Services Section -->
+        <section id="services">
+          <h2>Our Services</h2>
 
-            <!-- Contact Section -->
-            <section id="contact">
-                <h2>Contact Us</h2>
-                <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
-                    <div class="form-group">
-                        <label for="firstName">First Name: <span class="required">*</span></label>
-                        <input type="text" id="firstName" name="firstName" required />
+          <h3>Peer Counselling</h3>
+          <ul>
+            <li>For those newly diagnosed with vision loss</li>
+            <li>For people living with vision loss</li>
+            <li>For people with vision loss participating in research</li>
+            <li>For individuals, families, and groups</li>
+            <li>Support available face-to-face and via telehealth</li>
+          </ul>
 
-                        <label for="lastName">Last Name: <span class="required">*</span></label>
-                        <input type="text" id="lastName" name="lastName" required />
+          <h3>Education</h3>
+          <ul>
+            <li>
+              Training for individuals learning to use their computer with the
+              screen reader JAWS
+            </li>
+          </ul>
 
-                        <label for="email">Email Address:</label>
-                        <input type="email" id="email" name="email" required />
+          <h3>Accessibility</h3>
+          <ul>
+            <li>
+              Digital content accessibility testing using the JAWS screen reader
+            </li>
+            <li>Compliance assessments for organisations</li>
+          </ul>
+        </section>
 
-                        <label for="contactNumber">Contact Number: <span class="required">*</span></label>
-                        <input type="tel" id="contactNumber" name="contactNumber" pattern="[0-9]{10}" required
-                            title="Enter a 10-digit number with no spaces or symbols" />
+        <!-- Contact Section -->
+        <section id="contact">
+          <h2>Contact Us</h2>
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            novalidate
+          >
+            <div class="form-group">
+              <label for="firstName"
+                >First Name: <span class="required">*</span></label
+              >
+              <input type="text" id="firstName" name="firstName" required />
 
-                        <label for="reason">Reason for Contact:</label>
-                        <textarea id="reason" name="reason" rows="4" required></textarea>
-                    </div>
-                    <button type="submit">Submit</button>
+              <label for="lastName"
+                >Last Name: <span class="required">*</span></label
+              >
+              <input type="text" id="lastName" name="lastName" required />
 
-                </form>
+              <label for="email">Email Address:</label>
+              <input type="email" id="email" name="email" required />
 
+              <label for="contactNumber"
+                >Contact Number: <span class="required">*</span></label
+              >
+              <input
+                type="tel"
+                id="contactNumber"
+                name="contactNumber"
+                pattern="[0-9]{10}"
+                required
+                title="Enter a 10-digit number with no spaces or symbols"
+              />
 
-            </section>
-        </main>
+              <label for="reason">Reason for Contact:</label>
+              <textarea id="reason" name="reason" rows="4" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </section>
+      </main>
 
-        <!-- Footer -->
-        <footer>
-  <p>Contact us at: <a href="mailto:admin@dionic.com.au" class="footer-email">admin@dionic.com.au</a> | Phone: 0422 929 662</p>
-            <p>&copy; Dr Di Ashworth</p>
-        </footer>
+      <!-- Footer -->
+      <footer>
+        <p>
+          Contact us at:
+          <a href="mailto:admin@dionic.com.au" class="footer-email"
+            >admin@dionic.com.au</a
+          >
+          | Phone: 0422 929 662
+        </p>
+        <p>&copy; Dr Di Ashworth</p>
+      </footer>
     </div>
 
     <!-- Theme Toggle Script -->
     <script src="script.js" defer></script>
-</body>
-
+  </body>
 </html>
