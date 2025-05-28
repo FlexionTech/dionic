@@ -1,0 +1,6 @@
+Such a cool photo of a wattle tree. shows resilience'
+
+https://www.australiangeographic.com.au/archive/reader-photos/2011/04/flickr-photo-of-the-week-wattle-tree/
+
+for the text over the image, i want the text color to be inverted base on the image.
+https://stackoverflow.com/questions/50986688/invert-text-color-based-on-background-in-css
