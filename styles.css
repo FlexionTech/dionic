@@ -10,9 +10,9 @@
   --title-bar-fg: #454B1B;
   --nav-bg: #f4f4f4;
   --nav-text: #454B1B;
-  --button-bg: rgba(74, 97, 15, 0.3);
+  --button-bg:  rgba(74, 97, 15, 0.3);
   --button-hover-bg: #525b0e;
-  --input-border: rgba(74, 97, 15, 0.3);
+  --input-border:  rgba(74, 97, 15, 0.3);
   --footer-color: #454B1B;
 }
 
@@ -24,8 +24,8 @@
   --nav-bg: #252222;
   --nav-text: #f1e7d1;
   --button-bg: rgba(238, 225, 225, 0.3);
-  --button-hover-bg: #486c04;
-  --input-border: rgba(238, 225, 225, 0.3);
+  --button-hover-bg:#486c04;
+  --input-border:rgba(238, 225, 225, 0.3);
   --footer-color: #aaa;
 }
 
@@ -37,31 +37,15 @@
   box-sizing: border-box;
 }
 
-body,
-html {
-  position: relative;
+body, html {
+  position:relative;
   padding: 0.15rem;
   margin: 0;
   font-family: Helvetica;
   line-height: 1.6;
   background-color: var(--background-color);
   color: var(--text-color);
-  z-index: 1;
-  scroll-behavior: smooth;
-}
-
-/* add css for the hero image you added to the index.html file */
-.hero-imag {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('images/wattle-tree.webp');
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-  /* Ensure it stays behind other content */
+  z-index:1;
 }
 
 
@@ -69,35 +53,35 @@ html {
 body::before {
   content: "";
   background: url('images/dionic_logo.png') no-repeat center center;
-  background-size: contain;
-  opacity: 0.15;
-  position: fixed;
+  background-size: contain; 
+  opacity: 0.15;              
+  position:fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
-  pointer-events: none;
+  z-index: 0;                 
+  pointer-events: none;       
 }
 
 .content-wrapper {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
+  padding:1rem;
   padding-block-end: 0.5rem;
   padding-block-start: 0.5rem;
-  z-index: 2;
+  z-index:2;
 }
 
 /* =============================
    Header & Logo
 ============================= */
 .title-bar {
-  position: relative;
+  position:relative;
   background-color: var(--title-bar-bg);
   color: var(--title-bar-fg);
-  padding: 0.1rem 0.2rem;
+  padding:0.1rem 0.2rem;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
   border-radius: 28px;
 }
@@ -109,7 +93,7 @@ body::before {
   justify-content: left;
   flex-wrap: nowrap;
   gap: 0.5rem;
-  padding: 0.1rem;
+  padding:0.1rem;
 }
 
 .logo {
@@ -124,27 +108,24 @@ body::before {
 }
 
 [data-bs-theme="dark"] #theme-toggle-btn {
-  color: #dfc965;
-  filter: drop-shadow(0 0 6px rgba(236, 195, 82, 0.907));
-}
-
-[data-bs-theme="light"] #theme-toggle-btn {
-  color: #1d3d04;
-  filter: drop-shadow(0 0 6px rgba(252, 253, 253, 0.538));
-}
-
+    color:#dfc965;
+    filter: drop-shadow(0 0 6px rgba(236, 195, 82, 0.907));
+  }
+ 
+  [data-bs-theme="light"] #theme-toggle-btn {
+    color:#1d3d04;
+    filter: drop-shadow(0 0 6px rgba(252, 253, 253, 0.538));
+  }
+  
 
 .site-title {
   font-size:3.5rem;
   margin: 0;
   font-weight: bold;
   color: var(--title-bar-fg);
-  -webkit-font-smoothing: antialiased;
-  /* For WebKit browsers (Safari, Chrome) */
-  -moz-osx-font-smoothing: grayscale;
-  /* For Firefox on macOS */
-  text-rendering: optimizeLegibility;
-  /* Optional: enhances kerning/ligatures */
+  -webkit-font-smoothing: antialiased;   /* For WebKit browsers (Safari, Chrome) */
+  -moz-osx-font-smoothing: grayscale;    /* For Firefox on macOS */
+  text-rendering: optimizeLegibility;    /* Optional: enhances kerning/ligatures */
 }
 
 [data-bs-theme="dark"] .site-title {
@@ -174,16 +155,16 @@ h2 {
 ============================= */
 form {
   display: flex;
-  max-width: 600px;
+  max-width:600px;
   flex-direction: column;
   gap: 1rem;
 }
 
 input,
 textarea {
-  display: block;
-  width: 90%;
-  max-width: 400px;
+  display:block;
+  width:90%;
+  max-width:400px;
   padding: 0.75rem;
   font-size: 1rem;
   border: 1px solid var(--input-border);
@@ -222,15 +203,15 @@ button[type="submit"].active {
    Theme Toggle Button
 ============================= */
 #theme-toggle-btn {
-  position: absolute;
-  top: 19%;
+  position:absolute;
+  top:19%;
   right: 1.5em;
   background: none;
   border: none;
   cursor: pointer;
   z-index: 1000;
   padding: 0.1rem;
-  transform: translateY(-50%);
+  transform:translateY(-50%);
 }
 
 #theme-icon svg {
@@ -251,10 +232,10 @@ footer {
 
 /* Menu button */
 #menu-btn {
-  display: block;
+  display:block;
   font-size: 1.5rem;
-  position: absolute;
-  top: 38%;
+  position:absolute;
+  top:38%;
   left: 0.3rem;
   background: none;
   border: none;
@@ -262,11 +243,11 @@ footer {
   color: var(--text-color);
   z-index: 1000;
   padding: 0.5rem;
-  transform: translateY(-50%);
+  transform:translateY(-50%);
 }
 
 [data-bs-theme="dark"] #menu-btn {
-  background-color: transparent;
+  background-color:transparent;
 }
 
 
@@ -295,7 +276,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 .menu-dialog {
   position: absolute;
   font-weight: lighter;
-  font-size: 8px;
+  font-size:8px;
   top: 60px;
   left: 1rem;
   background-color: var(--title-bar-bg);
@@ -362,14 +343,14 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   padding-left: 30rem;
   border-bottom-left-radius: 26px;
   border-bottom-right-radius: 26px;
-  /* border-radius: 50px;*/
+ /* border-radius: 50px;*/
 }
 
 
 
 
 [data-bs-theme="light"] .title-bar {
-  font-weight: bold;
+  font-weight:bold;
   text-shadow: #eaf8f7;
     background: linear-gradient(
     to bottom,
@@ -377,10 +358,6 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
     rgba(41, 45, 17, 0) 100%
   );
   }
-  background: linear-gradient(to top,
-      #525b0e 0%,
-      rgba(41, 45, 17, 0) 100%);
-}
 
 [data-bs-theme="dark"] .title-bar {
   background: linear-gradient(
@@ -394,27 +371,27 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   color: var(--title-bar-fg);
   font-size:20px;
   text-decoration: none;
-  font-weight: light;
+  font-weight:light;
 }
 
 [data-bs-theme="light"] .header-nav a {
   color: #333409;
   font-size:20px;
   text-decoration: none;
-  font-weight: light;
+  font-weight:light;
 }
 
 [data-bs-theme="dark"] .header-nav a:hover {
   color: #028024;
   text-decoration: underline;
-  font-weight: light;
+  font-weight:light;
   transition: all 0.2s ease;
 }
 
 [data-bs-theme="light"] .header-nav a:hover {
-  color: #707003;
+ color: #707003;
   text-decoration: underline;
-  font-weight: light;
+  font-weight:light;
   transition: all 0.2s ease;
 }
 
@@ -562,20 +539,19 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   .site-title {
     font-size: 1.5rem;
   }
-
   #theme-toggle-btn {
     right: 0.5rem;
     padding-top:17px;
   }
 }
 
-@media (min-width: 768px) {
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
-  }
+  @media (min-width: 768px) {
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-y: auto;
+    }
 
   form {
     width: 100%;
@@ -584,10 +560,9 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 }
 
 @media (max-width: 600px) {
-
   input,
   textarea {
-    width: 100%;
-    /* Use full width on small screens */
+    width: 100%;           /* Use full width on small screens */
   }
 }
+
