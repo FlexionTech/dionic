@@ -54,7 +54,7 @@ body::before {
   content: "";
   background: url('images/dionic_logo.png') no-repeat center center;
   background-size: contain; 
-  opacity: 0.15;              
+  opacity: 0.05;              
   position:fixed;
   top: 0;
   left: 0;
