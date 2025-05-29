@@ -1,66 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <title>Dionic</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="images/favicon.png" type="image/png" />
-  <title>Dionic</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
+  <body data-bs-theme="auto">
+    <div class="content-wrapper">
+      <!-- Header -->
+      <header class="title-bar">
+        <div class="title-bar-content">
+          <!-- Brand: logo + title side-by-side -->
+          <div class="brand">
+            <img src="images/dionic_logo.png" alt="Logo" class="logo" />
+            <h1 class="site-title">DIONIC</h1>
+          </div>
 
-<body data-bs-theme="auto">
-  <div class="content-wrapper">
-    <!-- Header -->
-    <header class="title-bar">
-      <div class="title-bar-content">
-        <!-- Brand: logo + title side-by-side -->
-        <div class="brand">
-          <img src="images/dionic_logo.png" alt="Logo" class="logo" />
-          <h1 class="site-title">DIONIC</h1>
+          <!-- Theme Toggle Button -->
+          <button
+            id="theme-toggle-btn"
+            aria-label="Toggle theme"
+            title="Toggle theme"
+          >
+            <span id="theme-icon"></span>
+          </button>
+
+          <!-- Mobile Menu Button -->
+          <button id="menu-btn" aria-label="Open menu">&#9776;</button>
+
+          <!-- Floating Dialog Menu -->
+          <div id="menu-dialog" class="menu-dialog">
+            <button id="close-dialog" aria-label="Close menu">&times;</button>
+            <nav class="dialog-nav">
+              <a href="#profile">Profile</a>
+              <a href="#services">Services</a>
+              <a href="#contact">Contact</a>
+            </nav>
+          </div>
         </div>
 
-        <!-- Theme Toggle Button -->
-        <button id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
-          <span id="theme-icon"></span>
-        </button>
+        <!-- Main nav for desktop -->
+        <nav class="header-nav">
+          <a href="#profile">Profile</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-        <!-- Mobile Menu Button -->
-        <button id="menu-btn" aria-label="Open menu">&#9776;</button>
-
-        <!-- Floating Dialog Menu -->
-        <div id="menu-dialog" class="menu-dialog">
-          <button id="close-dialog" aria-label="Close menu">&times;</button>
-          <nav class="dialog-nav">
-            <a href="#profile">Profile</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </div>
-      </div>
-
-      <!-- Main nav for desktop -->
-      <nav class="header-nav">
-        <a href="#profile">Profile</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-      <!-- add hero image here from images folder wattle-tree -->
-      <section class="hero">
-        <img src="images/wattle-tree.webp" alt="Wattle tree in bloom" class="hero-image" />
-        <div class="hero-text">
-          <h2>Welcome to DIONIC</h2>
-          <p>
-            Empowering individuals with vision loss through peer counselling,
-            education, and accessibility services.
-          </p>
-        </div>
+      <!-- Main Content -->
+      <main>
+        <!-- Profile Section -->
         <section id="profile">
-          <h2>Dr Di Ashworth – Founder of DIONIC</h2>
+          <h2>Meet Dr Di Ashworth – Founder of DIONIC</h2>
           <p>
             Dr Di Ashworth is the founder of DIONIC and a dedicated Social
             Worker with a diverse and rich background in disability support,
@@ -124,42 +118,60 @@
         <!-- Contact Section -->
         <section id="contact">
           <h2>Contact Us</h2>
-          <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            novalidate
+          >
             <div class="form-group">
-              <label for="firstName">First Name: <span class="required">*</span></label>
+              <label for="firstName"
+                >First Name: <span class="required">*</span></label
+              >
               <input type="text" id="firstName" name="firstName" required />
 
-              <label for="lastName">Last Name: <span class="required">*</span></label>
+              <label for="lastName"
+                >Last Name: <span class="required">*</span></label
+              >
               <input type="text" id="lastName" name="lastName" required />
 
               <label for="email">Email Address:</label>
               <input type="email" id="email" name="email" required />
 
-              <label for="contactNumber">Contact Number: <span class="required">*</span></label>
-              <input type="tel" id="contactNumber" name="contactNumber" pattern="[0-9]{10}" required
-                title="Enter a 10-digit number with no spaces or symbols" />
+              <label for="contactNumber"
+                >Contact Number: <span class="required">*</span></label
+              >
+              <input
+                type="tel"
+                id="contactNumber"
+                name="contactNumber"
+                pattern="[0-9]{10}"
+                required
+                title="Enter a 10-digit number with no spaces or symbols"
+              />
 
-              <label for="reason">Reason for Contact:</label>
+              <label for="reason">Purpose of Inquiry:</label>
               <textarea id="reason" name="reason" rows="4" required></textarea>
             </div>
             <button type="submit">Submit</button>
           </form>
         </section>
-    </main>
+      </main>
 
-    <!-- Footer -->
-    <footer>
-      <p>
-        Contact us at:
-        <a href="mailto:admin@dionic.com.au" class="footer-email">admin@dionic.com.au</a>
-        | Phone: 0422 929 662
-      </p>
-      <p>&copy; Dr Di Ashworth</p>
-    </footer>
-  </div>
+      <!-- Footer -->
+      <footer>
+        <p>
+          Contact us at:
+          <a href="mailto:admin@dionic.com.au" class="footer-email"
+            >admin@dionic.com.au</a
+          >
+          | Phone: 0422 929 662
+        </p>
+        <p>&copy; Dr Di Ashworth</p>
+      </footer>
+    </div>
 
-  <!-- Theme Toggle Script -->
-  <script src="script.js" defer></script>
-</body>
-
+    <!-- Theme Toggle Script -->
+    <script src="script.js" defer></script>
+  </body>
 </html>
