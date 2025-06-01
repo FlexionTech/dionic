@@ -109,7 +109,7 @@ body::before {
 
 .site-title {
   font-size:3rem;
-  font-weight: bolder;
+  font-weight: 400;
   color: var(--title-bar-fg);
   white-space: nowrap;
  margin: 0;
@@ -537,38 +537,18 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 
   .vision-image {
     width: 60%;
-    max-width: 270px;
+    max-width: 250px;
     height: auto;
-    margin: 0 auto auto auto;
+    margin: auto;
   }
 
   .vision-text {
     width: 100%;
     text-align: center;
-    font-size: 0.65rem;
+    font-size: 0.60rem;
     padding: 0.5rem 0.5rem;
     box-sizing: border-box;
   }
-  /*.vision-bar {      
-    align-items: center;
-    justify-content: center;
-    height: auto;                  
-    max-width: 100%;               
-    padding: 0.5rem;
-  }
-
-  .vision-image {
-    width: 60%;                   
-    height: 130px;           
-    margin: 0 auto auto auto;
-  }
-
-  .vision-text {
-    font-size: 0.65rem;
-    text-align: center;
-    padding-left: 1rem;
-  }
-*/
   .welcome-note {
     font-size: 15px;
     padding: 0.5rem;
@@ -589,12 +569,10 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
     justify-content: center;
     font-size: 0.75rem;
     padding-bottom: 10px;
-    padding-left: 20px;
+    padding-left: 55px;
   }
 
-  .header-nav a::after {
-  margin: 0.25rem;
-}
+  
     .wrapper {
       display: flex;
       justify-content: center;
