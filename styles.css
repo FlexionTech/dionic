@@ -39,7 +39,6 @@ body, html {
   position:relative;
   justify-content: center;
   align-items: center;
-  padding: 0.15rem;
   margin: 0;
   font-family:'Inria Sans', serif;
   line-height: 1.3rem;
@@ -55,7 +54,7 @@ body::before {
   background: url('images/dionic_logo.png') no-repeat center center;
   background-size: contain; 
   opacity: 0.05;              
-  position:relative;
+  position:fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -125,10 +124,12 @@ body::before {
 
 .header-nav {
   font-weight: 300;
+  color: var(--title-bar-fg);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   white-space: nowrap;
+  padding-right:2.5rem;
 }
 
 .header-nav a {
@@ -136,20 +137,20 @@ body::before {
  
 }
 
-.header-nav a::after {
+/*.header-nav a::after {
   content: "-";
   margin: 0 1.5rem;
+}*/
+
+
+.header-nav a:not(:last-child)::after {
+  content: "-";
+  margin: 0 0.5rem;
+  color: #888;
+  text-decoration: none;      
+  display: inline-block;       
+  pointer-events: none;  
 }
-
-
-.header-nav a:last-child::after {
-  content: "";  
-}
-
-.header-nav a::after :hover {
-  text-decoration: none;
-}
-
 
 [data-bs-theme="dark"] #theme-toggle-btn {
     color:#dfc965;
@@ -174,7 +175,7 @@ h2 {
   margin-bottom: 0.75rem;
   font-size: 1.5rem;
   border-bottom: 2px solid var(--text-color);
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.15rem;
 }
 
 /* =============================
@@ -456,7 +457,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
     flex-direction: row;
     font-size: 0.6rem;
     padding-bottom: 10px;
-    padding-left:12px;
+    padding-left:15px;
   }
 #theme-toggle-btn {
     font-size: 2px;
@@ -535,7 +536,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   }
 
   .vision-image {
-    width: 100%;
+    width: 60%;
     max-width: 270px;
     height: auto;
     margin: 0 auto auto auto;
@@ -588,6 +589,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
     justify-content: center;
     font-size: 0.75rem;
     padding-bottom: 10px;
+    padding-left: 20px;
   }
 
   .header-nav a::after {
@@ -611,7 +613,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 
 @media (min-width: 500px) and (max-width: 700px) {
   .title-bar-content {
-   padding:1rem;
+   padding:0.5rem;
   }
 
   .logo {
@@ -623,10 +625,8 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   }
 
   .header-nav {
-    align-items: center;
-    padding-left: 40px;
-    padding-bottom: 15px;
-    font-size: 1rem;
+    align-items: right;
+    font-size: 0.85rem;
   }
 
 
@@ -636,7 +636,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 
   #theme-toggle-btn {
     right: 0.5rem;
-    padding-top: 3px;
+    padding-top: 10px;
   }
 
   input,
@@ -647,6 +647,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   .vision-bar {
     align-items: center;
     justify-content: center;
+    flex-direction: row;
     width: 75%;
     max-width: 100%;
     height: auto;
@@ -655,17 +656,16 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   }
 
   .vision-image {
-    width: 100%;
-    max-width: 250px;
+    width: 60%;
+    max-width: 100%;
     height: auto;
-    margin: 1rem;
+    margin: 0.5rem;
   }
 
   .vision-text {
-    width: 100%;
     text-align: center;
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    padding: 0.5rem 0.5rem;
     box-sizing: border-box;
   }
   .welcome-note {
@@ -687,12 +687,11 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   }
 
   .site-title {
-    font-size: 3.5rem;
+    font-size: 3 rem;
   }
 
   .header-nav {
-    font-size: 1.5rem;
-    padding-right: 2.5rem;
+    font-size: 1rem;
   }
 
   .header-nav a::after {
@@ -720,10 +719,11 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   .vision-text {
     text-align: center;
     padding: 1rem;
+    font-size: 0.8rem;
   }
 
   .welcome-note {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     padding-bottom: 1rem;
   }
 
@@ -735,19 +735,19 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   }
 
   .site-title {
-    font-size: 5rem;
+    font-size: 3.5rem;
   }
 
   .header-nav {
     font-size: 1.5rem;
-    margin-right: 2.5rem;
+    padding-left: 2.5rem;
   }
   .welcome-note {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     padding-bottom: 1.5rem;
   }
   .vision-bar {
-    width: 80%;
+    width: 70%;
     align-items: center;
     justify-content: center;
     height: auto;
@@ -755,7 +755,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   }
 
   .vision-image {
-    width: 70%;
+    width: 60%;
     height: auto;
     margin: 1rem ;
   }
