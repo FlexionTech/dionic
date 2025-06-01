@@ -151,31 +151,20 @@ body::before {
   display: inline-block;       
   pointer-events: none;  
 }
-
-[data-bs-theme="dark"] #theme-toggle-btn {
-    color:#dfc965;
-    filter: drop-shadow(0 0 6px rgba(236, 195, 82, 0.907));
-  }
- 
-  [data-bs-theme="light"] #theme-toggle-btn {
-    color:#1d3d04;
-    filter: drop-shadow(0 0 6px rgba(252, 253, 253, 0.538));
-  }
   
-
 
 /* =============================
    Main Sections
 ============================= */
 section {
-  margin: 2.5rem 0;
+  margin: 1rem;
 }
 
 h2 {
-  margin-bottom: 0.75rem;
-  font-size: 1.5rem;
+ 
+  font-weight: light;
+  padding: 0.5rem;
   border-bottom: 2px solid var(--text-color);
-  padding-bottom: 0.15rem;
 }
 
 /* =============================
@@ -199,6 +188,7 @@ textarea {
   border-radius: 4px;
   background-color: transparent;
   color: var(--text-color);
+  margin:0.5rem;
 }
 
 input:focus,
@@ -256,8 +246,6 @@ footer {
   font-size: 0.9rem;
   color: var(--footer-color);
 }
-
-
 
 
 
@@ -319,6 +307,15 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   Padding-top:2rem;
 }
 
+[data-bs-theme="dark"] #theme-toggle-btn {
+    color:#dfc965;
+    filter: drop-shadow(0 0 6px rgba(236, 195, 82, 0.907));
+  }
+ 
+  [data-bs-theme="light"] #theme-toggle-btn {
+    color:#1d3d04;
+    filter: drop-shadow(0 0 6px rgba(252, 253, 253, 0.538));
+  }
 
 [data-bs-theme="light"] .title-bar {
   font-weight:bold;
@@ -388,16 +385,10 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 }
 
 [data-bs-theme="dark"] h2 {
-  font-weight: bold;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
   border-bottom: 1px solid rgba(238, 225, 225, 0.3);
 }
 
 [data-bs-theme="light"] h2 {
-  font-weight: bold;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
   border-bottom: 1px solid rgba(74, 97, 15, 0.3);
 }
 
@@ -436,8 +427,8 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 
 @media (max-width: 300px) {
   .title-bar-content {
+    display: flex;
     flex-direction: column;
-    gap:5px;
     align-items: center;
     text-align: center;
   }
@@ -446,9 +437,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
     align-items: center;
     height: 24px;
   }
-  .brand{
-    align-items: center;
-  }
+  
   .site-title {
     font-size: 1rem;
   }
@@ -456,23 +445,18 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   .header-nav {
     flex-direction: row;
     font-size: 0.6rem;
-    padding-bottom: 10px;
-    padding-left:15px;
+    padding-bottom: 15px;
+    padding-right:5px;
   }
-#theme-toggle-btn {
-    font-size: 2px;
-    right: 0.5rem;
-    padding-top: 3px;
-  }
-  .header-nav a::after {
-  margin: 0.2rem;
-}
 
+  
+h2{
+  font-size: 10px;
+}
 
 .content-wrapper {
  font-size: 10px;
 }
-
 
 .vision-bar {
     flex-direction: column;
@@ -495,8 +479,8 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   .vision-text {
     width: 100%;
     text-align: center;
-    font-size: 7px;
-    padding: 0 0.5rem;
+    font-size: 10px;
+    padding: 0 0.1rem;
     box-sizing: border-box;
   }
   #theme-toggle-btn {
@@ -505,10 +489,11 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
     padding-top: 10px;
   }
   .welcome-note {
-    font-size: 10px;
-    padding: 0.5rem;
+    font-size: 12px;
+    padding: 0;
   }
 }
+
 
   @media (min-width: 301px) and (max-width: 499px) {
   .title-bar-content {
@@ -517,7 +502,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
     text-align: center;
   }
 .content-wrapper {
- font-size: 14px;
+ font-size: 12px;
 }
 #theme-toggle-btn {
     font-size: 2px;
@@ -530,23 +515,23 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
     justify-content: center;
     width: 100%;
     max-width: 100%;
-    height: auto;
-    padding: 0.5rem;
+    height: 220px;
+    padding-left: 1rem;
     box-sizing: border-box;
   }
 
   .vision-image {
     width: 60%;
     max-width: 250px;
-    height: auto;
+    height:80%;
     margin: auto;
   }
 
   .vision-text {
-    width: 100%;
     text-align: center;
-    font-size: 0.60rem;
-    padding: 0.5rem 0.5rem;
+    font-size: 0.70rem;
+    padding: 0.5rem ;
+    gap:0;
     box-sizing: border-box;
   }
   .welcome-note {
@@ -555,7 +540,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   }
 
   .logo {
-    height: 36px;
+    height: 45px;
   }
 
   .site-title {
@@ -580,7 +565,9 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
       overflow-y: auto;
       width: 100%;
     }
-
+h2{
+  font-size: 15px;
+}
   form {
     width: 100%;
   }
@@ -594,16 +581,16 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
    padding:0.5rem;
   }
 
+  
   .logo {
-    height: 50px;
+    height: 70px;
   }
 
   .site-title {
     font-size: 2.5rem;
   }
 
-  .header-nav {
-    align-items: right;
+  .header-nav { 
     font-size: 0.85rem;
   }
 
@@ -616,7 +603,13 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
     right: 0.5rem;
     padding-top: 10px;
   }
+h2{
+  font-size:18px;
+}
 
+.content-wrapper {
+ font-size: 15px;
+}
   input,
   textarea {
     width: 100%;           
@@ -634,7 +627,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   }
 
   .vision-image {
-    width: 60%;
+    width: 62%;
     max-width: 100%;
     height: auto;
     margin: 0.5rem;
@@ -642,7 +635,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 
   .vision-text {
     text-align: center;
-    font-size: 0.7rem;
+    font-size: 12px;
     padding: 0.5rem 0.5rem;
     box-sizing: border-box;
   }
@@ -658,10 +651,10 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 @media (min-width: 701px) and (max-width: 900px) {
 
   .title-bar-content {
-   padding:1rem;
+   padding:0.5rem;
   }
   .logo {
-    height: 60px;
+    height: 70px;
   }
 
   .site-title {
@@ -689,7 +682,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   }
 
   .vision-image {
-    width: 65%;
+    width: 60%;
     height: auto;
     margin: 0 ;
   }
@@ -702,7 +695,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 
   .welcome-note {
     font-size: 1.5rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
   }
 
 }
