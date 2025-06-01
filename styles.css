@@ -33,16 +33,16 @@
 /* =============================
    Base Styles and Resets
 ============================= */
-* {
-  box-sizing: border-box;
-}
 
 body, html {
+  max-width:100%;
   position:relative;
+  justify-content: center;
+  align-items: center;
   padding: 0.15rem;
   margin: 0;
-  font-family: Helvetica;
-  line-height: 1.5;
+  font-family:'Inria Sans', serif;
+  line-height: 1.3rem;
   background-color: var(--background-color);
   color: var(--text-color);
   z-index:1;
@@ -55,7 +55,7 @@ body::before {
   background: url('images/dionic_logo.png') no-repeat center center;
   background-size: contain; 
   opacity: 0.05;              
-  position:fixed;
+  position:relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -66,11 +66,12 @@ body::before {
 
 .content-wrapper {
   position: relative;
-  max-width: 1500Px;
+  width: 100%;
+  max-width: 1500px;
   margin: 0 auto;
-  padding:1rem;
+  padding: 1rem;
+  box-sizing: border-box;
   padding-block-end: 0.5rem;
-  padding-block-start: 0.5rem;
   z-index:2;
 }
 
@@ -81,7 +82,6 @@ body::before {
   position:relative;
   background-color: var(--title-bar-bg);
   color: var(--title-bar-fg);
-  padding:0;
   line-height: 1;
   width: 100%;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
@@ -93,31 +93,31 @@ body::before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /*flex-wrap: nowrap;       Prevent wrapping */
-  width: 100%;
-  padding: 0.2rem 0.1rem;
+  height: auto;
+  flex-wrap: wrap; 
   min-height: 60px;
-  overflow-x: auto;
-  gap: 1rem;
+  gap:0;
+  padding: 0.25rem 1rem;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.1rem;
+  margin:0;
+  padding:0;
   /*flex-shrink: 1;            /* Allow text to truncate if too long */
 }
 
 .site-title {
   font-size:3rem;
-  font-weight: bold;
+  font-weight: bolder;
   color: var(--title-bar-fg);
   white-space: nowrap;
-  overflow: hidden;
-  /*text-overflow: ellipsis;*/
+ margin: 0;
 }
 
 .logo {
+  align-items: center;
   height: 90px;
   width: auto;
   flex-shrink: 0;
@@ -126,28 +126,29 @@ body::before {
 .header-nav {
   font-weight: 300;
   display: flex;
-  flex-shrink: 0;
-  white-space: nowrap;
+  align-items: center;
   flex-wrap: wrap;
- /* margin: 25px;*/
+  white-space: nowrap;
 }
 
 .header-nav a {
   position: relative;
-  padding: 0.2rem;
+ 
 }
 
 .header-nav a::after {
-  content: " -";
-  margin: 0 0.25rem;
+  content: "-";
+  margin: 0 1.5rem;
 }
+
 
 .header-nav a:last-child::after {
-  content: "";
+  content: "";  
 }
 
-
-
+.header-nav a::after :hover {
+  text-decoration: none;
+}
 
 
 [data-bs-theme="dark"] #theme-toggle-btn {
@@ -161,15 +162,6 @@ body::before {
   }
   
 
-/*.site-title {
-  font-size:3.5rem;
-  margin: 0;
-  font-weight: bold;
-  color: var(--title-bar-fg);
-  -webkit-font-smoothing: antialiased;  
-  -moz-osx-font-smoothing: grayscale;    
-  text-rendering: optimizeLegibility;    
-}*/
 
 /* =============================
    Main Sections
@@ -282,28 +274,26 @@ footer {
   box-shadow: 0 0 4px red;
 }
 
-/* Don't apply red to other inputs like email */
+
 input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   border-color: initial;
   box-shadow: none;
 }
 
-
-/* =============================
-   Navigation
-============================= */
-
  .vision-bar {
   border-radius: 20px;
-  margin: 30px auto;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
   height: 450px;
   max-width: 900px;
 }
 
  .vision-image {
+  justify-content: space-between;
   border-radius: 12px;
   height: 400;
   width: 550px;
@@ -317,9 +307,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   font-weight: 600;
   text-align:center;
   font-size: 1rem;
-  font-size: 15px;
   flex: 1;
-  padding:1rem;
 }
 
 .welcome-note {
@@ -327,7 +315,6 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   font-weight: bold;
   text-align:center;
   font-size: 1rem;
-  font-size: 30px;
   Padding-top:2rem;
 }
 
@@ -367,6 +354,8 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   font-weight:light;
   transition: all 0.2s ease;
 }
+
+
 
 [data-bs-theme="light"] .header-nav a:hover {
  color: #707003;
@@ -442,90 +431,168 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 /* =============================
    Responsive Design
 =============================*/
-  
-@media (max-width: 500px) {
-  .logo {
-    height: 50px;
-  }
 
-  .site-title {
-    font-size: 2rem;
-  }
-
-  #theme-toggle-btn {
-    font-size: 2px;
-    right: 0.5rem;
-    padding-top: 10px;
-  }
-/* .header-nav {
-    gap: 0.5rem;
-    font-size: 1rem;
-    padding-left: 5.5rem;
-  }*/
-
-  .vision-bar {       /* Stack image and text */
-    align-items: center;
-    justify-content: center;
-    height: auto;                  /* Allow height to adjust */
-    max-width: 100%;               /* Use full screen width */
-    padding: 1rem;
-  }
-
-  .vision-image {
-    width: 65%;                    /* Responsive width */
-    height: auto;            /* Maintain aspect ratio */
-    margin: 0 auto 0.5rem auto;      /* Center and add spacing below */
-  }
-
-  .vision-text {
-    font-size: 0.75rem;
-    text-align: center;
-    padding-left: 1.5rem;
-  }
-
-  .welcome-note {
-    font-size: 15px;
-    padding-top: 1rem;
-  }
-}
 
 @media (max-width: 300px) {
-  .site-title {
-    font-size: 1rem;
+  .title-bar-content {
+    flex-direction: column;
+    gap:5px;
+    align-items: center;
+    text-align: center;
   }
 
   .logo {
+    align-items: center;
     height: 24px;
+  }
+  .brand{
+    align-items: center;
+  }
+  .site-title {
+    font-size: 1rem;
   }
 
   .header-nav {
+    flex-direction: row;
     font-size: 0.6rem;
-    gap: 0.3rem;
-    padding-right: 0.5rem;
+    padding-bottom: 10px;
+    padding-left:12px;
   }
+#theme-toggle-btn {
+    font-size: 2px;
+    right: 0.5rem;
+    padding-top: 3px;
+  }
+  .header-nav a::after {
+  margin: 0.2rem;
+}
+
+
+.content-wrapper {
+ font-size: 10px;
+}
+
+
 .vision-bar {
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 160px;
-    padding: 1rem;
-  }
-  .vision-image {
-    width: 65%;                    
-    height: 130px;  
-  }
-  .vision-text {
-    font-size: 0.5rem;
-    padding-top: 1rem;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    box-sizing: border-box;
   }
 
+  .vision-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 0.5rem auto;
+  }
+
+  .vision-text {
+    width: 100%;
+    text-align: center;
+    font-size: 7px;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+  }
   #theme-toggle-btn {
-    font-size: 1px;
+    font-size: 0.5px;
     right: 0.5rem;
     padding-top: 10px;
   }
+  .welcome-note {
+    font-size: 10px;
+    padding: 0.5rem;
+  }
 }
 
-  @media (min-width: 500px) {
+  @media (min-width: 301px) and (max-width: 499px) {
+  .title-bar-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+.content-wrapper {
+ font-size: 14px;
+}
+#theme-toggle-btn {
+    font-size: 2px;
+    right: 0.5rem;
+    padding-top: 3px;
+  }
+.vision-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .vision-image {
+    width: 100%;
+    max-width: 270px;
+    height: auto;
+    margin: 0 auto auto auto;
+  }
+
+  .vision-text {
+    width: 100%;
+    text-align: center;
+    font-size: 0.65rem;
+    padding: 0.5rem 0.5rem;
+    box-sizing: border-box;
+  }
+  /*.vision-bar {      
+    align-items: center;
+    justify-content: center;
+    height: auto;                  
+    max-width: 100%;               
+    padding: 0.5rem;
+  }
+
+  .vision-image {
+    width: 60%;                   
+    height: 130px;           
+    margin: 0 auto auto auto;
+  }
+
+  .vision-text {
+    font-size: 0.65rem;
+    text-align: center;
+    padding-left: 1rem;
+  }
+*/
+  .welcome-note {
+    font-size: 15px;
+    padding: 0.5rem;
+  }
+
+  .logo {
+    height: 36px;
+  }
+
+  .site-title {
+    font-size: 1.8rem;
+  }
+  
+
+  .header-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 0.75rem;
+    padding-bottom: 10px;
+  }
+
+  .header-nav a::after {
+  margin: 0.25rem;
+}
     .wrapper {
       display: flex;
       justify-content: center;
@@ -540,18 +607,104 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 
 }
 
-@media (max-width: 600px) {
+
+
+@media (min-width: 500px) and (max-width: 700px) {
+  .title-bar-content {
+   padding:1rem;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .site-title {
+    font-size: 2.5rem;
+  }
+
+  .header-nav {
+    align-items: center;
+    padding-left: 40px;
+    padding-bottom: 15px;
+    font-size: 1rem;
+  }
+
+
+  .header-nav a::after {
+  margin: 0.5rem;
+}
+
+  #theme-toggle-btn {
+    right: 0.5rem;
+    padding-top: 3px;
+  }
+
   input,
   textarea {
     width: 100%;           
+  }
+
+  .vision-bar {
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    max-width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .vision-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin: 1rem;
+  }
+
+  .vision-text {
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+  }
+  .welcome-note {
+    font-size: 24px;
+    padding: 1rem;
   }
 }
 
 
  
 
-@media (min-width: 501px) and (max-width: 900px) {
+@media (min-width: 701px) and (max-width: 900px) {
+
+  .title-bar-content {
+   padding:1rem;
+  }
+  .logo {
+    height: 60px;
+  }
+
+  .site-title {
+    font-size: 3.5rem;
+  }
+
+  .header-nav {
+    font-size: 1.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .header-nav a::after {
+  margin: 1rem;
+}
+
+#theme-toggle-btn {
+    right: 0.6rem;
+    padding-top: 5px;
+  }
   .vision-bar {
+    width: 65%;
     align-items: center;
     justify-content: center;
     height: auto;
@@ -571,40 +724,44 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 
   .welcome-note {
     font-size: 1.75rem;
+    padding-bottom: 1rem;
   }
 
-  .site-title {
-    font-size: 3rem;
-  }
-
-  .logo {
-    height: 60px;
-  }
-
-  .header-nav {
-    font-size: 1rem;
-    gap: 1.5rem;
-    padding-right:50px;
-  }
 }
 
-/* Large phones */
-@media (min-width: 501px) and (max-width: 768px) {
-
-  .site-title {
-    font-size: 3.5rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+@media (min-width: 901px) {
+  .logo {
+    height: 80px;
   }
 
-  .logo {
-    height: 50px;
+  .site-title {
+    font-size: 5rem;
   }
 
   .header-nav {
-    gap: 0.75rem;
-    font-size: 1rem;
-    justify-content: flex-end;
+    font-size: 1.5rem;
+    margin-right: 2.5rem;
+  }
+  .welcome-note {
+    font-size: 1.75rem;
+    padding-bottom: 1.5rem;
+  }
+  .vision-bar {
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .vision-image {
+    width: 70%;
+    height: auto;
+    margin: 1rem ;
+  }
+
+  .vision-text {
+    text-align: center;
+    padding-left: 1rem;
   }
 }
