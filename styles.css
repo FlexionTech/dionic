@@ -68,7 +68,7 @@ body::before {
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.5rem;
   box-sizing: border-box;
   padding-block-end: 0.5rem;
   z-index:2;
@@ -514,25 +514,26 @@ h2{
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 100%;
-    height: 220px;
-    padding-left: 1rem;
+    max-width: 90%;
+    height: 165px;
+    padding: 0.5rem;
     box-sizing: border-box;
   }
 
   .vision-image {
+    align-items: left;
     width: 60%;
     max-width: 250px;
-    height:80%;
-    margin: auto;
+    min-height:86%;
+    margin-left: 0.3rem;
+    margin-right: 0.5rem;
   }
 
   .vision-text {
     text-align: center;
-    font-size: 0.70rem;
-    padding: 0.5rem ;
-    gap:0;
+    font-size: 0.65rem;
     box-sizing: border-box;
+    line-height: 1.5;
   }
   .welcome-note {
     font-size: 15px;
@@ -573,7 +574,6 @@ h2{
   }
 
 }
-
 
 
 @media (min-width: 500px) and (max-width: 700px) {
