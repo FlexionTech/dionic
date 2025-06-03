@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const savedTheme = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  const iconSpan = document.getElementById('theme-icon');
+document.addEventListener("DOMContentLoaded", function () {
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const themeToggleBtn = document.getElementById("theme-toggle-btn");
+  const iconSpan = document.getElementById("theme-icon");
   const body = document.body;
 
   const sunIcon = `
@@ -26,40 +26,51 @@ document.addEventListener('DOMContentLoaded', function () {
         </svg>`;
 
   function updateIcon(theme) {
-    iconSpan.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
+    iconSpan.innerHTML = theme === "dark" ? sunIcon : moonIcon;
     themeToggleBtn.title =
-      theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
+      theme === "dark" ? "Switch to light theme" : "Switch to dark theme";
   }
 
   const initialTheme =
-    savedTheme === 'light' || savedTheme === 'dark'
+    savedTheme === "light" || savedTheme === "dark"
       ? savedTheme
       : prefersDark
-      ? 'dark'
-      : 'light';
+      ? "dark"
+      : "light";
 
-  body.setAttribute('data-bs-theme', initialTheme);
+  // Set logo based on theme
+  const logo = document.getElementById("logo");
+  function updateLogo(theme) {
+    logo.src =
+      theme === "dark"
+        ? "images/DarkThemeLogoV1.png"
+        : "images/LightThemeLogoV1.png";
+  }
+  updateLogo(initialTheme);
+
+  body.setAttribute("data-bs-theme", initialTheme);
   updateIcon(initialTheme);
 
   themeToggleBtn.onclick = function () {
-    const currentTheme = body.getAttribute('data-bs-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    body.setAttribute('data-bs-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
+    const currentTheme = body.getAttribute("data-bs-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    body.setAttribute("data-bs-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
     updateIcon(newTheme);
+    updateLogo(newTheme);
   };
 });
 
 /* Success response upon contact form submission*/
-window.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('form');
-  form.addEventListener('submit', function (e) {
+window.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
     const data = new FormData(form);
     fetch(form.action, {
-      method: 'POST',
+      method: "POST",
       body: data,
-      headers: { Accept: 'application/json' },
+      headers: { Accept: "application/json" },
     })
       .then((response) => {
         if (response.ok) {
@@ -67,79 +78,91 @@ window.addEventListener('DOMContentLoaded', () => {
             "<p>Thanks for your message! I'll get back to you soon.</p>";
         } else {
           form.innerHTML =
-            '<p>Oops! There was a problem. Please try again later.</p>';
+            "<p>Oops! There was a problem. Please try again later.</p>";
         }
       })
       .catch(() => {
-        form.innerHTML = '<p>There was a problem. Please try again later.</p>';
+        form.innerHTML = "<p>There was a problem. Please try again later.</p>";
       });
   });
 });
 
-document.getElementById('contactForm').addEventListener('submit', function (e) {
+document.getElementById("contactForm").addEventListener("submit", function (e) {
   if (!this.checkValidity()) {
     e.preventDefault(); // Prevent form submission
-    alert('Please fill in all required fields correctly.');
+    alert("Please fill in all required fields correctly.");
   }
 });
 
 /*Highlights in red when user leaves input field unfilled*/
-const fields = ['firstName', 'lastName', 'contactNumber'];
+const fields = ["firstName", "lastName", "contactNumber"];
 fields.forEach((id) => {
   const input = document.getElementById(id);
-  input.addEventListener('focusout', () => {
+  input.addEventListener("focusout", () => {
     if (!input.checkValidity()) {
-      input.style.borderColor = 'red';
-      input.style.boxShadow = '0 0 4px red';
+      input.style.borderColor = "red";
+      input.style.boxShadow = "0 0 4px red";
     } else {
-      input.style.borderColor = '';
-      input.style.boxShadow = '';
+      input.style.borderColor = "";
+      input.style.boxShadow = "";
     }
   });
 
-  input.addEventListener('input', () => {
-    input.style.borderColor = '';
-    input.style.boxShadow = '';
+  input.addEventListener("input", () => {
+    input.style.borderColor = "";
+    input.style.boxShadow = "";
   });
 });
 
-const menuBtn = document.getElementById('menu-btn');
-const menuDialog = document.getElementById('menu-dialog');
-const closeDialog = document.getElementById('close-dialog');
+const menuBtn = document.getElementById("menu-btn");
+const menuDialog = document.getElementById("menu-dialog");
+const closeDialog = document.getElementById("close-dialog");
 
 // Toggle menu dialog
-menuBtn.addEventListener('click', () => {
-  menuDialog.classList.toggle('show');
+menuBtn.addEventListener("click", () => {
+  menuDialog.classList.toggle("show");
 });
 
 // Close on "x"
-closeDialog.addEventListener('click', () => {
-  menuDialog.classList.remove('show');
+closeDialog.addEventListener("click", () => {
+  menuDialog.classList.remove("show");
 });
 
 // Optional: Close on outside click
-document.addEventListener('click', (e) => {
+document.addEventListener("click", (e) => {
   if (!menuDialog.contains(e.target) && !menuBtn.contains(e.target)) {
-    menuDialog.classList.remove('show');
+    menuDialog.classList.remove("show");
   }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contactForm');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
   const submitBtn = document.querySelector('button[type="submit"]');
 
   // Disable the button by default
   submitBtn.disabled = true;
-  submitBtn.classList.remove('active');
+  submitBtn.classList.remove("active");
 
   // Check form validity on every input change
-  form.addEventListener('input', () => {
+  form.addEventListener("input", () => {
     if (form.checkValidity()) {
       submitBtn.disabled = false;
-      submitBtn.classList.add('active');
+      submitBtn.classList.add("active");
     } else {
       submitBtn.disabled = true;
-      submitBtn.classList.remove('active');
+      submitBtn.classList.remove("active");
     }
   });
+});
+
+// Save theme
+localStorage.setItem("theme", isDarkTheme ? "dark" : "light");
+
+// Load theme on page load
+window.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme") || "dark";
+  isDarkTheme = savedTheme === "dark";
+  logo.src = isDarkTheme
+    ? "images/DarkThemeLogoV1.png"
+    : "images/LightThemeLogoV1.png";
 });
