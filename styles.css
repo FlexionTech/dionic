@@ -303,7 +303,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
    Theme Related Design
 =============================*/
 [data-bs-theme="dark"] #theme-toggle-btn {
-    color:#dfc965;
+    color:#f1e7d1;
     filter: drop-shadow(0 0 6px rgba(236, 195, 82, 0.907));
   }
  
