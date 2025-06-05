@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateLogo(theme) {
     logo.src =
       theme === "dark"
-        ? "images/DarkThemeLogoV1.png"
-        : "images/LightThemeLogoV1.png";
+        ? "images/DarkThemeLogoV2.png"
+        : "images/LightThemeLogoV2.png";
   }
   updateLogo(initialTheme);
 
@@ -163,6 +163,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme") || "dark";
   isDarkTheme = savedTheme === "dark";
   logo.src = isDarkTheme
-    ? "images/DarkThemeLogoV1.png"
-    : "images/LightThemeLogoV1.png";
+    ? "images/DarkThemeLogoV2.png"
+    : "images/LightThemeLogoV2.png";
 });
