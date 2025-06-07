@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateLogo(theme) {
     logo.src =
       theme === "dark"
-        ? "images/DarkThemeLogoV3.png"
-        : "images/LightThemeLogoV3.png";
+        ? "images/DarkThemeLogoV2.png"
+        : "images/LightThemeLogoV2.png";
     logo.alt = "Growth Strength Resilience";
   }
 
