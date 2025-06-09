@@ -1,32 +1,50 @@
 /* =============================
    Theme Variables
 ============================= */
+@font-face {
+  font-family: 'Inria Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/inriasans/v14/ptRMTiqXYfZMCOiVj9kQ1On4KA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inria Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/inriaserif/v17/fC1lPYxPY3rXxEndZJAzN3Srdy0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 
 :root,
 [data-bs-theme="light"] {
   --background-color: #f1e7d1;
   --text-color: #454B1B;
-  --title-bar-bg:  #f1e7d1;
+  --title-bar-bg: #f1e7d1;
   --title-bar-fg: #454B1B;
   --nav-bg: #f4f4f4;
   --nav-text: #0b020b;
-  --button-bg:  rgba(74, 97, 15, 0.3);
+  --button-bg: rgba(74, 97, 15, 0.3);
   --button-hover-bg: #525b0e;
-  --input-border:  rgba(74, 97, 15, 0.3);
+  --input-border: rgba(74, 97, 15, 0.3);
   --footer-color: #454B1B;
+  --logo: url('images/dionic_logo_light.png');
 }
 
 [data-bs-theme="dark"] {
   --background-color: #141702;
-  --text-color:  #f1e7d1;
+  --text-color: #f1e7d1;
   --title-bar-bg: #141c03;
-  --title-bar-fg:  #f1e7d1;
+  --title-bar-fg: #f1e7d1;
   --nav-bg: #252222;
   --nav-text: #f1e7d1;
   --button-bg: rgba(238, 225, 225, 0.3);
-  --button-hover-bg:#486c04;
-  --input-border:rgba(238, 225, 225, 0.3);
+  --button-hover-bg: #486c04;
+  --input-border: rgba(238, 225, 225, 0.3);
   --footer-color: #aaa;
+  --logo: url('images/dionic_logo_dark.png');
 }
 
 
@@ -34,17 +52,18 @@
    Base Styles and Resets
 ============================= */
 
-body, html {
-  max-width:100%;
-  position:relative;
+body,
+html {
+  max-width: 100%;
+  position: relative;
   justify-content: center;
   align-items: center;
   margin: 0;
-  font-family:'Inria Sans', serif;
+  font-family: 'Inria Sans', serif;
   line-height: 1.3rem;
   background-color: var(--background-color);
   color: var(--text-color);
-  z-index:1;
+  z-index: 1;
 }
 
 .content-wrapper {
@@ -55,29 +74,29 @@ body, html {
   padding: 0.3rem;
   box-sizing: border-box;
   padding-block-end: 0.5rem;
-  z-index:2;
+  z-index: 2;
 }
 
 /*Watermarkbackground*/
 body::before {
   content: "";
-  background: url('images/dionic_logo.png') no-repeat center center;
-  background-size: contain; 
-  opacity: 0.05;              
-  position:fixed;
+  background: var(--logo) no-repeat center center;
+  background-size: contain;
+  opacity: 0.05;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;                 
-  pointer-events: none;       
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* =============================
    Header & Logo
 ============================= */
 .title-bar {
-  position:relative;
+  position: relative;
   background-color: var(--title-bar-bg);
   line-height: 1;
   width: 100%;
@@ -86,30 +105,30 @@ body::before {
 }
 
 .title-bar-content {
-  font-family:'Inria Sans', serif;
+  font-family: 'Inria Sans', serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: auto;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   min-height: 60px;
-  gap:0;
+  gap: 0;
   padding: 0.25rem 1rem;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 .site-title {
-  font-size:3rem;
+  font-size: 3rem;
   font-weight: 300;
-  
+
   white-space: nowrap;
- margin: 0;
+  margin: 0;
 }
 
 .logo {
@@ -120,29 +139,29 @@ body::before {
 }
 
 .header-nav {
-   color:#e22c35;
+  color: #e22c35;
   font-weight: 300;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   white-space: nowrap;
-  padding-right:2.5rem;
+  padding-right: 2.5rem;
 }
 
 .header-nav a {
   position: relative;
- 
+
 }
 
 
 .header-nav a:not(:last-child)::after {
   content: "-";
   margin: 0 0.5rem;
-  text-decoration: none;      
-  display: inline-block;       
-  pointer-events: none;  
+  text-decoration: none;
+  display: inline-block;
+  pointer-events: none;
 }
-  
+
 
 /* =============================
    Main Sections
@@ -161,15 +180,15 @@ h2 {
    Theme Toggle Button
 ============================= */
 #theme-toggle-btn {
-  position:absolute;
-  top:19%;
+  position: absolute;
+  top: 19%;
   right: 1.5em;
   background: none;
   border: none;
   cursor: pointer;
   z-index: 1000;
   padding: 0.1rem;
-  transform:translateY(-50%);
+  transform: translateY(-50%);
 }
 
 #theme-icon svg {
@@ -193,23 +212,23 @@ footer {
 ============================= */
 form {
   display: flex;
-  max-width:600px;
+  max-width: 600px;
   flex-direction: column;
   gap: 1rem;
 }
 
 input,
 textarea {
-  display:block;
-  width:90%;
-  max-width:400px;
+  display: block;
+  width: 90%;
+  max-width: 400px;
   padding: 0.75rem;
   font-size: 1rem;
   border: 1px solid var(--input-border);
   border-radius: 4px;
   background-color: transparent;
   color: var(--text-color);
-  margin:0.5rem;
+  margin: 0.5rem;
 }
 
 input:focus,
@@ -260,7 +279,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 /* ====================================
    Vision Bar & Images & Welcome Note 
    ==================================== */
- .vision-bar {
+.vision-bar {
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -272,7 +291,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   max-width: 900px;
 }
 
- .vision-image {
+.vision-image {
   justify-content: space-between;
   border-radius: 12px;
   height: 400;
@@ -282,10 +301,10 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   flex-shrink: 0;
 }
 
- .vision-text {
+.vision-text {
   font-family: 'Inria Serif', serif;
   font-weight: 600;
-  text-align:center;
+  text-align: center;
   font-size: 1rem;
   flex: 1;
 }
@@ -293,9 +312,9 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 .welcome-note {
   font-family: 'Inria Serif', serif;
   font-weight: bold;
-  text-align:center;
+  text-align: center;
   font-size: 1rem;
-  Padding-top:2rem;
+  Padding-top: 2rem;
 }
 
 
@@ -303,58 +322,54 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
    Theme Related Design
 =============================*/
 [data-bs-theme="dark"] #theme-toggle-btn {
-    color:#f1e7d1;
-    filter: drop-shadow(0 0 6px rgba(236, 195, 82, 0.907));
-  }
- 
-  [data-bs-theme="light"] #theme-toggle-btn {
-    color:#1d3d04;
-    filter: drop-shadow(0 0 6px rgba(252, 253, 253, 0.538));
-  }
+  color: #f1e7d1;
+  filter: drop-shadow(0 0 6px rgba(236, 195, 82, 0.907));
+}
+
+[data-bs-theme="light"] #theme-toggle-btn {
+  color: #1d3d04;
+  filter: drop-shadow(0 0 6px rgba(252, 253, 253, 0.538));
+}
 
 [data-bs-theme="light"] .title-bar {
-  font-weight:bold;
-    background: linear-gradient(
-    to bottom,
-    #e2d8bf 0%,
-    rgba(41, 45, 17, 0) 100%
-  );
-  }
+  font-weight: bold;
+  background: linear-gradient(to bottom,
+      #e2d8bf 0%,
+      rgba(41, 45, 17, 0) 100%);
+}
 
 [data-bs-theme="dark"] .title-bar {
-  background: linear-gradient(
-    to bottom,
-    #141702 0%,
-    rgba(181, 0, 12, 0) 100%
-  );
+  background: linear-gradient(to bottom,
+      #141702 0%,
+      rgba(181, 0, 12, 0) 100%);
 }
 
 
 [data-bs-theme="dark"] .header-nav a {
   color: var(--title-bar-fg);
   text-decoration: none;
-  font-weight:light;
+  font-weight: light;
 }
 
 [data-bs-theme="light"] .header-nav a {
   color: var(--title-bar-fg);
   text-decoration: none;
-  font-weight:light;
+  font-weight: light;
 }
 
 [data-bs-theme="dark"] .header-nav a:hover {
   color: #85a58e;
   text-decoration: underline;
-  font-weight:light;
+  font-weight: light;
   transition: all 0.6s ease;
 }
 
 
 
 [data-bs-theme="light"] .header-nav a:hover {
- color: #707003;
+  color: #707003;
   text-decoration: underline;
-  font-weight:light;
+  font-weight: light;
   transition: all 0.6s ease;
 }
 
@@ -431,7 +446,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
     align-items: center;
     height: 24px;
   }
-  
+
   .site-title {
     font-size: 1rem;
   }
@@ -440,19 +455,19 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
     flex-direction: row;
     font-size: 0.6rem;
     padding-bottom: 15px;
-    padding-right:5px;
+    padding-right: 5px;
   }
 
-  
-h2{
-  font-size: 10px;
-}
 
-.content-wrapper {
- font-size: 10px;
-}
+  h2 {
+    font-size: 10px;
+  }
 
-.vision-bar {
+  .content-wrapper {
+    font-size: 10px;
+  }
+
+  .vision-bar {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -478,11 +493,13 @@ h2{
     line-height: 1.3;
     box-sizing: border-box;
   }
+
   #theme-toggle-btn {
     font-size: 0.5px;
     right: 0.5rem;
     padding-top: 10px;
   }
+
   .welcome-note {
     font-size: 12px;
     padding: 0;
@@ -490,21 +507,24 @@ h2{
 }
 
 
-  @media (min-width: 321px) and (max-width: 399px) {
+@media (min-width: 321px) and (max-width: 399px) {
   .title-bar-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-.content-wrapper {
- font-size: 12px;
-}
-#theme-toggle-btn {
+
+  .content-wrapper {
+    font-size: 12px;
+  }
+
+  #theme-toggle-btn {
     font-size: 2px;
     right: 0.5rem;
     padding-top: 3px;
   }
-.vision-bar {
+
+  .vision-bar {
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -519,7 +539,7 @@ h2{
     align-items: left;
     width: 60%;
     max-width: 250px;
-    min-height:86%;
+    min-height: 86%;
     margin-left: 0.3rem;
     margin-right: 0.5rem;
   }
@@ -530,6 +550,7 @@ h2{
     box-sizing: border-box;
     line-height: 1.5;
   }
+
   .welcome-note {
     font-size: 15px;
     padding: 0.5rem;
@@ -542,7 +563,7 @@ h2{
   .site-title {
     font-size: 1.8rem;
   }
-  
+
 
   .header-nav {
     flex-direction: row;
@@ -553,38 +574,43 @@ h2{
     padding-left: 55px;
   }
 
-  
-    .wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow-y: auto;
-      width: 100%;
-    }
-h2{
-  font-size: 15px;
-}
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
   form {
     width: 100%;
   }
 
 }
 
-  @media (min-width: 400px) and (max-width: 499px) {
+@media (min-width: 400px) and (max-width: 499px) {
   .title-bar-content {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-.content-wrapper {
- font-size: 12px;
-}
-#theme-toggle-btn {
+
+  .content-wrapper {
+    font-size: 12px;
+  }
+
+  #theme-toggle-btn {
     font-size: 2px;
     right: 0.5rem;
     padding-top: 3px;
   }
-.vision-bar {
+
+  .vision-bar {
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -599,7 +625,7 @@ h2{
     align-items: left;
     width: 60%;
     max-width: 250px;
-    max-height:90%;
+    max-height: 90%;
     margin-left: 0.3rem;
     margin-right: 0.5rem;
   }
@@ -610,6 +636,7 @@ h2{
     box-sizing: border-box;
     line-height: 1.5;
   }
+
   .welcome-note {
     font-size: 15px;
     padding: 0.5rem;
@@ -622,7 +649,7 @@ h2{
   .site-title {
     font-size: 1.8rem;
   }
-  
+
 
   .header-nav {
     flex-direction: row;
@@ -633,17 +660,19 @@ h2{
     padding-left: 55px;
   }
 
-  
-    .wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow-y: auto;
-      width: 100%;
-    }
-h2{
-  font-size: 15px;
-}
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
   form {
     width: 100%;
   }
@@ -652,10 +681,10 @@ h2{
 
 @media (min-width: 500px) and (max-width: 700px) {
   .title-bar-content {
-   padding:0.1rem;
+    padding: 0.1rem;
   }
 
-  
+
   .logo {
     height: 50px;
   }
@@ -664,29 +693,31 @@ h2{
     font-size: 2rem;
   }
 
-  .header-nav { 
+  .header-nav {
     font-size: 0.85rem;
   }
 
 
   .header-nav a::after {
-  margin: 0.5rem;
-}
+    margin: 0.5rem;
+  }
 
   #theme-toggle-btn {
     right: 0.5rem;
     padding-top: 10px;
   }
-h2{
-  font-size:18px;
-}
 
-.content-wrapper {
- font-size: 15px;
-}
+  h2 {
+    font-size: 18px;
+  }
+
+  .content-wrapper {
+    font-size: 15px;
+  }
+
   input,
   textarea {
-    width: 100%;           
+    width: 100%;
   }
 
   .vision-bar {
@@ -713,6 +744,7 @@ h2{
     padding: 0.5rem 0.5rem;
     box-sizing: border-box;
   }
+
   .welcome-note {
     font-size: 24px;
     padding: 1rem;
@@ -720,13 +752,14 @@ h2{
 }
 
 
- 
+
 
 @media (min-width: 701px) and (max-width: 900px) {
 
   .title-bar-content {
-   padding:0.5rem;
+    padding: 0.5rem;
   }
+
   .logo {
     height: 70px;
   }
@@ -740,13 +773,14 @@ h2{
   }
 
   .header-nav a::after {
-  margin: 1rem;
-}
+    margin: 1rem;
+  }
 
-#theme-toggle-btn {
+  #theme-toggle-btn {
     right: 0.6rem;
     padding-top: 5px;
   }
+
   .vision-bar {
     width: 65%;
     align-items: center;
@@ -758,7 +792,7 @@ h2{
   .vision-image {
     width: 60%;
     height: auto;
-    margin: 0 ;
+    margin: 0;
   }
 
   .vision-text {
@@ -787,10 +821,12 @@ h2{
     font-size: 1.5rem;
     padding-left: 2.5rem;
   }
+
   .welcome-note {
     font-size: 1.5rem;
     padding-bottom: 1.5rem;
   }
+
   .vision-bar {
     width: 70%;
     align-items: center;
@@ -802,7 +838,7 @@ h2{
   .vision-image {
     width: 60%;
     height: auto;
-    margin: 1rem ;
+    margin: 1rem;
   }
 
   .vision-text {

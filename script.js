@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateLogo(theme) {
     logo.src =
       theme === "dark"
-        ? "images/DarkThemeLogoV2.png"
-        : "images/LightThemeLogoV2.png";
+        ? "images/dionic_logo_dark.png"
+        : "images/dionic_logo_light.png";
     logo.alt = "Growth Strength Resilience";
   }
 
