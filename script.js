@@ -128,21 +128,4 @@ document.addEventListener("DOMContentLoaded", function () {
       submitBtn.classList.remove("active");
     }
   });
-
-  // Menu toggle
-  const menuBtn = document.getElementById("menu-btn");
-  const menuDialog = document.getElementById("menu-dialog");
-  const closeDialog = document.getElementById("close-dialog");
-
-  menuBtn.addEventListener("click", () => {
-    menuDialog.classList.toggle("show");
-  });
-  closeDialog.addEventListener("click", () => {
-    menuDialog.classList.remove("show");
-  });
-  document.addEventListener("click", (e) => {
-    if (!menuDialog.contains(e.target) && !menuBtn.contains(e.target)) {
-      menuDialog.classList.remove("show");
-    }
-  });
 });
