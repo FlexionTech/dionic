@@ -30,7 +30,7 @@
   --button-hover-bg: #525b0e;
   --input-border: rgba(74, 97, 15, 0.3);
   --footer-color: #454B1B;
-  --logo: url('images/dionic_logo_light.png');
+  --logo: url('images/DiLogoLight.png');
 }
 
 [data-bs-theme="dark"] {
@@ -44,7 +44,7 @@
   --button-hover-bg: #486c04;
   --input-border: rgba(238, 225, 225, 0.3);
   --footer-color: #aaa;
-  --logo: url('images/dionic_logo_dark.png');
+  --logo: url('images/DiLogoDark.png');
 }
 
 
@@ -472,11 +472,11 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 }
 
 [data-bs-theme="light"] .vision-text {
-  color: #1a4903;
+  color: #1d2213;
 }
 
 [data-bs-theme="light"] .welcome-note {
-  color: #1a4903;
+  color: #1d2213;
 }
 
 [data-bs-theme="dark"] .vision-bar {
