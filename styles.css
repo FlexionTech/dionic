@@ -21,8 +21,10 @@
 :root,
 [data-bs-theme="light"] {
   --background-color: #f1e7d1;
+  --card-color: #dbcfb5;
+  --text-input: #f9f7f2;
   --text-color: #454B1B;
-  --title-bar-bg:#e2d8bf;
+  --title-bar-bg: #e2d8bf;
   --title-bar-fg: #454B1B;
   --nav-bg: #f4f4f4;
   --nav-text: #0b020b;
@@ -30,11 +32,13 @@
   --button-hover-bg: #525b0e;
   --input-border: rgba(74, 97, 15, 0.3);
   --footer-color: #454B1B;
-  --logo: url('images/DiLogoLight.png');
+  --logo: url('images/dionic_logo_light.png');
 }
 
 [data-bs-theme="dark"] {
   --background-color: #141702;
+  --card-color: #282e07;
+  --text-input: #0c0f01;
   --text-color: #f1e7d1;
   --title-bar-bg: #141c03;
   --title-bar-fg: #f1e7d1;
@@ -44,7 +48,7 @@
   --button-hover-bg: #486c04;
   --input-border: rgba(238, 225, 225, 0.3);
   --footer-color: #aaa;
-  --logo: url('images/DiLogoDark.png');
+  --logo: url('images/dionic_logo_dark.png');
 }
 
 
@@ -64,7 +68,9 @@ html {
   background-color: var(--background-color);
   color: var(--text-color);
   z-index: 1;
-  
+  scroll-behavior: smooth;
+
+
 }
 
 .content-wrapper {
@@ -100,11 +106,9 @@ body::before {
 ============================= */
 .title-bar {
   position: sticky;
-  top:0;
+  top: 0;
   line-height: 1;
   width: 100%;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-  border-radius: 28px;
   background: var(--background-color);
   backdrop-filter: blur(8px);
   z-index: 1000;
@@ -203,9 +207,10 @@ h2 {
 }
 
 
-.contact-intro{
-padding: auto;
+.contact-intro {
+  padding: auto;
 }
+
 /* =============================
    Footer
 ============================= */
@@ -235,7 +240,7 @@ textarea {
   font-size: 1rem;
   border: 1px solid var(--input-border);
   border-radius: 4px;
-  background-color: transparent;
+  background-color: var(--text-input);
   color: var(--text-color);
   margin: 0.5rem;
 }
@@ -326,8 +331,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 }
 
 .services-section {
-  background-color:var(--background-color);;
-  padding: 1rem 1rem;
+  padding: 1rem;
 }
 
 .services-container {
@@ -349,22 +353,22 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 }
 
 .service-card {
-  background-color:var(--background-color);
-  border-radius: 1rem;
+  background-color: var(--card-color);
+  border-radius: 20rem 20rem 1rem 1rem;
+  ;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   transition: transform 0.2s ease;
+
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
+  transform: scale(1.02);
 }
 
 .service-image {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  display: block;
+  width: 90%;
+  margin: 5%;
 }
 
 .service-content {
@@ -458,6 +462,14 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   color: #f8f6f3;
 }
 
+h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: var(--title-bar-fg);
+  text-align: center;
+  margin-top: 3rem;
+}
+
 [data-bs-theme="dark"] h2 {
   border-bottom: 1px solid rgba(238, 225, 225, 0.3);
 }
@@ -466,8 +478,8 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   border-bottom: 1px solid rgba(74, 97, 15, 0.3);
 }
 
-[data-bs-theme="light"] .vision-bar {
-  background-color:#e2d8bf;
+.vision-bar {
+  background-color: var(--card-color);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -479,10 +491,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   color: #1d2213;
 }
 
-[data-bs-theme="dark"] .vision-bar {
-  background-color: #1d2213;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
+
 
 [data-bs-theme="dark"] .vision-text {
   color: var(--title-bar-fg);
@@ -497,18 +506,19 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
    Responsive Design
 =============================*/
 @media (min-width: 768px) {
-    .services-grid > :last-child:nth-child(3n + 1) {
-  grid-column: 1 / -1;
-  justify-self: center;
+  .services-grid> :last-child:nth-child(3n + 1) {
+    grid-column: 1 / -1;
+    justify-self: center;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1023px){
+@media (min-width: 769px) and (max-width: 1023px) {
   .services-grid {
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 @media (min-width: 1024px) {
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -928,4 +938,3 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
     padding-left: 1rem;
   }
 }
-
