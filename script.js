@@ -36,8 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateLogo(theme) {
     logo.src =
-      theme === "dark" ? "images/dionic_logo_dark.png" : "images/dionic_logo_light.png";
-    logo.alt = "Growth Strength Resilience";
+      theme === "dark"
+        ? "images/dionic_logo_dark.png"
+        : "images/dionic_logo_light.png";
+    logo.alt = "Symbol of wattle representing ‘Growth Strength Resilience’";
   }
 
   const initialTheme =
@@ -76,31 +78,52 @@ document.addEventListener("DOMContentLoaded", function () {
       method: "POST",
       body: data,
       headers: { Accept: "application/json" },
-    })
-      .then((response) => {
-        if (response.ok) {
-          const introMessage = document.getElementById("contact-intro");
-          if (introMessage) {
-            introMessage.style.display = "none";
-          }
-
-          form.innerHTML =
-            "<p>Thanks for your message! We will connect with you shortly.</p>";
-        } else {
-          form.innerHTML =
-            "<p>Oops! There was a problem. Please try again later.</p>";
+    }).then((response) => {
+      if (response.ok) {
+        const introMessage = document.getElementById("contact-intro");
+        if (introMessage) {
+          introMessage.style.display = "none";
         }
-      })
-      .catch(() => {
-        form.innerHTML = "<p>There was a problem. Please try again later.</p>";
-      });
+
+        const successMessage = document.createElement("p");
+        successMessage.textContent =
+          "Thanks for your message! We will connect with you shortly.";
+        successMessage.classList.add("success-message");
+        successMessage.style.color = "green";
+        successMessage.style.marginTop = "1rem";
+
+        form.parentNode.insertBefore(successMessage, form);
+        setTimeout(() => successMessage.classList.add("show"), 10);
+
+        form.reset();
+        submitBtn.disabled = true;
+        submitBtn.classList.remove("active");
+
+        setTimeout(() => {
+          successMessage.remove();
+          if (introMessage) introMessage.style.display = "block";
+        }, 10000);
+      } else {
+        form.innerHTML =
+          "<p>Oops! There was a problem. Please try again later.</p>";
+      }
+    });
   });
 
-  const fields = ["firstName", "lastName", "contactNumber"];
+  const fields = ["firstName", "lastName", "email"];
+  const emailInput = document.getElementById("email");
+
   fields.forEach((id) => {
     const input = document.getElementById(id);
     input.addEventListener("focusout", () => {
-      if (!input.checkValidity()) {
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      const isEmailField = input.id === "email";
+      const isInvalidEmail = isEmailField && !emailPattern.test(input.value);
+
+      if (
+        (isEmailField && isInvalidEmail) ||
+        (!isEmailField && !input.checkValidity())
+      ) {
         input.style.borderColor = "red";
         input.style.boxShadow = "0 0 4px red";
       } else {
@@ -108,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
         input.style.boxShadow = "";
       }
     });
+
     input.addEventListener("input", () => {
       input.style.borderColor = "";
       input.style.boxShadow = "";

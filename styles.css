@@ -1,3 +1,4 @@
+
 /* =============================
    Theme Variables
 ============================= */
@@ -153,9 +154,8 @@ body::before {
   font-weight: 300;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   white-space: nowrap;
-  padding-right: 2.5rem;
 }
 
 .header-nav a {
@@ -177,13 +177,7 @@ body::before {
    Main Sections
 ============================= */
 section {
-  margin: 1rem;
-}
-
-h2 {
-  font-weight: lighter;
-  padding: 1rem;
-  border-bottom: 2px solid var(--text-color);
+  margin: 0.5rem;
 }
 
 /* =============================
@@ -191,7 +185,7 @@ h2 {
 ============================= */
 #theme-toggle-btn {
   position: absolute;
-  top: 19%;
+  top: 1rem;
   right: 1.5em;
   background: none;
   border: none;
@@ -209,6 +203,7 @@ h2 {
 
 .contact-intro {
   padding: auto;
+  align-items: center;
 }
 
 /* =============================
@@ -226,17 +221,17 @@ footer {
    Form Styling
 ============================= */
 form {
-  display: flex;
-  max-width: 600px;
+  max-width: 100%;
   flex-direction: column;
   gap: 1rem;
+  align-items: center;
 }
 
 input,
 textarea {
   display: block;
-  width: clamp(250px, 90%, 600px);
-  padding: 0.75rem;
+  width: 800px;
+  padding:0.75rem;
   font-size: 1rem;
   border: 1px solid var(--input-border);
   border-radius: 4px;
@@ -252,14 +247,14 @@ textarea:focus {
 }
 
 button[type="submit"] {
+  display: flex !important;
   padding: 0.5rem 1.5rem;
   font-size: 1rem;
   background-color: var(--button-bg);
   color: #fff;
-  border: none;
   border-radius: 4px;
   cursor: not-allowed;
-  align-self: flex-start;
+  align-items: center !important;
   transition: background-color 0.3s ease;
 }
 
@@ -290,25 +285,32 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   box-shadow: none;
 }
 
+.success-message {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.success-message.show {
+  opacity: 1;
+}
+
 /* ====================================
    Vision Bar & Images & Welcome Note 
    ==================================== */
 .vision-bar {
-  border-radius: 20px;
+  border-radius: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
-  height: 450px;
   max-width: 900px;
 }
 
 .vision-image {
   justify-content: space-between;
-  border-radius: 12px;
-  height: 400;
-  width: 550px;
+  border-radius: 50px;
+  height: 80%;
+  width: 90%;
   margin-right: 20px;
   margin-left: 20px;
   flex-shrink: 0;
@@ -327,11 +329,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   font-weight: bold;
   text-align: center;
   font-size: 1rem;
-  padding-top: 2rem;
-}
-
-.services-section {
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .services-container {
@@ -355,11 +353,10 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 
 .card {
   max-width: 350px;
-
   background-color: var(--card-color);
   border-radius: 20rem 20rem 1rem 1rem;
   box-shadow: 0 0 10px #0000001a;
-  margin: 1rem;
+  margin: 1.5rem;
   transition: all .25s ease-in-out;
   display: flex;
   flex-direction: column;
@@ -382,15 +379,21 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 }
 
 .service-heading {
-  font-size: 1.25rem;
   font-weight: bold;
-  margin-bottom: 0.75rem;
 }
 
 .service-list {
   padding-left: 1.25rem;
   color: var(--text-color);
   list-style: disc;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #263702;
+  outline-offset: 2px;
 }
 
 /* =============================
@@ -468,19 +471,24 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   color: #f8f6f3;
 }
 
-h1 {
+h2 {
   font-weight: bold;
-  font-size: 2.5rem;
   color: var(--title-bar-fg);
   text-align: center;
-  margin-top: 3rem;
 }
 
-[data-bs-theme="dark"] h2 {
+
+h3 {
+  font-weight: bold;
+  color: var(--title-bar-fg);
+  text-align: center;
+}
+
+[data-bs-theme="dark"] h4 {
   border-bottom: 1px solid rgba(238, 225, 225, 0.3);
 }
 
-[data-bs-theme="light"] h2 {
+[data-bs-theme="light"] h4 {
   border-bottom: 1px solid rgba(74, 97, 15, 0.3);
 }
 
@@ -510,7 +518,7 @@ h1 {
 
 
 
-@media (max-width: 320px) {
+@media (max-width: 330px) {
   .title-bar-content {
     display: flex;
     flex-direction: column;
@@ -531,12 +539,14 @@ h1 {
     flex-direction: row;
     font-size: 0.6rem;
     padding-bottom: 15px;
-    padding-right: 5px;
+    align-items: center;
   }
 
-
   h2 {
-    font-size: 10px;
+    font-size: 0.85rem;
+  }
+  h3 {
+    font-size: 0.75rem;
   }
 
   .content-wrapper {
@@ -544,17 +554,19 @@ h1 {
   }
 
   .vision-bar {
+    border-radius: 30px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 100%;
+    max-width: 95%;
     height: auto;
     padding: 0.5rem;
     box-sizing: border-box;
   }
 
   .vision-image {
+    border-radius: 25px;
     width: 100%;
     max-width: 90%;
     height: auto;
@@ -578,8 +590,25 @@ h1 {
 
   .welcome-note {
     font-size: 12px;
+    margin-bottom: 1rem;
     padding: 0;
   }
+
+  .card{
+    width:100%
+  }
+  #contactForm{
+    width:100%;
+  }
+  input,
+textarea {
+  width: 90%;
+  margin: 0.1rem;
+}
+
+.services-section {
+  padding: 0.1rem;
+}
 }
 
 
@@ -601,21 +630,23 @@ h1 {
   }
 
   .vision-bar {
+    border-radius: 25px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 100%;
     max-width: 90%;
-    height: 165px;
+    height: 100%;
     padding: 0.5rem;
     box-sizing: border-box;
   }
 
   .vision-image {
+    border-radius: 25px;
     align-items: left;
     width: 60%;
     max-width: 250px;
-    min-height: 86%;
+    max-height: 80%;
     margin-left: 0.3rem;
     margin-right: 0.5rem;
   }
@@ -628,7 +659,7 @@ h1 {
   }
 
   .welcome-note {
-    font-size: 15px;
+    font-size: 1.05rem;
     padding: 0.5rem;
   }
 
@@ -643,11 +674,10 @@ h1 {
 
   .header-nav {
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     font-size: 0.75rem;
     padding-bottom: 10px;
-    padding-left: 55px;
   }
 
 
@@ -660,12 +690,24 @@ h1 {
   }
 
   h2 {
-    font-size: 15px;
+    font-size: 1.25rem;
   }
+  h3 {
+    font-size: 1rem;
+  }
+  #contactForm {
+    margin-left: 0.2rem;
+    width: 90%;
+  }
+   input,
+textarea {
+  margin-left: 0;
+  width: 100%;
+}
 
-  form {
-    width: 100%;
-  }
+.services-section {
+  padding: 0.5rem;
+}
 
 }
 
@@ -688,20 +730,22 @@ h1 {
 
   .vision-bar {
     flex-direction: row;
+    border-radius: 25px;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: 90%;
+    width: 90%;
+    max-width: 80%;
     height: 165px;
-    padding: 0.3rem;
+    padding: 0.4rem;
     box-sizing: border-box;
   }
 
   .vision-image {
     align-items: left;
+    border-radius: 20px;
     width: 60%;
     max-width: 250px;
-    max-height: 90%;
+    height: 90%;
     margin-left: 0.3rem;
     margin-right: 0.5rem;
   }
@@ -714,8 +758,15 @@ h1 {
   }
 
   .welcome-note {
-    font-size: 15px;
+    font-size: 1.25rem;
     padding: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+  h3 {
+    font-size: 1.15rem;
   }
 
   .logo {
@@ -745,13 +796,15 @@ h1 {
     width: 100%;
   }
 
-  h2 {
-    font-size: 15px;
+   #contactForm {
+    margin-left: 0.3rem;
+    width: 90%;
   }
-
-  form {
-    width: 100%;
-  }
+   input,
+textarea {
+  margin-left: 0;
+  width: 100%;
+}
 
 }
 
@@ -771,6 +824,7 @@ h1 {
 
   .header-nav {
     font-size: 0.85rem;
+    padding-right: 3.5rem;
   }
 
 
@@ -784,19 +838,28 @@ h1 {
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 1.35rem;
   }
+  h3 {
+    font-size: 1.15rem;
+  }
+   #contactForm {
+    margin-left: 0.3rem;
+    width: 93%;
+  }
+   input,
+textarea {
+  margin-left: 0;
+  width: 100%;
+}
 
   .content-wrapper {
     font-size: 15px;
   }
 
-  input,
-  textarea {
-    width: 100%;
-  }
 
   .vision-bar {
+    border-radius: 25px;
     align-items: center;
     justify-content: center;
     flex-direction: row;
@@ -808,6 +871,7 @@ h1 {
   }
 
   .vision-image {
+    border-radius: 20px;
     width: 62%;
     max-width: 100%;
     height: auto;
@@ -846,6 +910,7 @@ h1 {
 
   .header-nav {
     font-size: 1rem;
+    padding-right: 2.5rem;
   }
 
   .header-nav a::after {
@@ -858,6 +923,7 @@ h1 {
   }
 
   .vision-bar {
+    border-radius: 35px;
     width: 65%;
     align-items: center;
     justify-content: center;
@@ -866,6 +932,7 @@ h1 {
   }
 
   .vision-image {
+  border-radius: 30px;
     width: 60%;
     height: auto;
     margin: 0;
@@ -878,9 +945,25 @@ h1 {
   }
 
   .welcome-note {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     padding-bottom: 1.5rem;
   }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+   #contactForm {
+    margin: 5rem;
+    min-width: 80%;
+  }
+   input,
+textarea {
+  margin-left: 0;
+  width: 90%;
+}
 
 }
 
