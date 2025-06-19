@@ -1,4 +1,3 @@
-
 /* =============================
    Theme Variables
 ============================= */
@@ -231,7 +230,7 @@ input,
 textarea {
   display: block;
   width: 800px;
-  padding:0.75rem;
+  padding: 0.75rem;
   font-size: 1rem;
   border: 1px solid var(--input-border);
   border-radius: 4px;
@@ -289,6 +288,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
+
 .success-message.show {
   opacity: 1;
 }
@@ -482,13 +482,14 @@ h3 {
   font-weight: bold;
   color: var(--title-bar-fg);
   text-align: center;
+  padding-bottom: 0.5rem;
 }
 
-[data-bs-theme="dark"] h4 {
+[data-bs-theme="dark"] h3 {
   border-bottom: 1px solid rgba(238, 225, 225, 0.3);
 }
 
-[data-bs-theme="light"] h4 {
+[data-bs-theme="light"] h3 {
   border-bottom: 1px solid rgba(74, 97, 15, 0.3);
 }
 
@@ -545,6 +546,7 @@ h3 {
   h2 {
     font-size: 0.85rem;
   }
+
   h3 {
     font-size: 0.75rem;
   }
@@ -594,21 +596,23 @@ h3 {
     padding: 0;
   }
 
-  .card{
-    width:100%
+  .card {
+    width: 100%
   }
-  #contactForm{
-    width:100%;
-  }
-  input,
-textarea {
-  width: 90%;
-  margin: 0.1rem;
-}
 
-.services-section {
-  padding: 0.1rem;
-}
+  #contactForm {
+    width: 100%;
+  }
+
+  input,
+  textarea {
+    width: 90%;
+    margin: 0.1rem;
+  }
+
+  .services-section {
+    padding: 0.1rem;
+  }
 }
 
 
@@ -692,22 +696,25 @@ textarea {
   h2 {
     font-size: 1.25rem;
   }
+
   h3 {
     font-size: 1rem;
   }
+
   #contactForm {
     margin-left: 0.2rem;
     width: 90%;
   }
-   input,
-textarea {
-  margin-left: 0;
-  width: 100%;
-}
 
-.services-section {
-  padding: 0.5rem;
-}
+  input,
+  textarea {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .services-section {
+    padding: 0.5rem;
+  }
 
 }
 
@@ -765,6 +772,7 @@ textarea {
   h2 {
     font-size: 1.35rem;
   }
+
   h3 {
     font-size: 1.15rem;
   }
@@ -796,15 +804,16 @@ textarea {
     width: 100%;
   }
 
-   #contactForm {
+  #contactForm {
     margin-left: 0.3rem;
     width: 90%;
   }
-   input,
-textarea {
-  margin-left: 0;
-  width: 100%;
-}
+
+  input,
+  textarea {
+    margin-left: 0;
+    width: 100%;
+  }
 
 }
 
@@ -840,18 +849,21 @@ textarea {
   h2 {
     font-size: 1.35rem;
   }
+
   h3 {
     font-size: 1.15rem;
   }
-   #contactForm {
+
+  #contactForm {
     margin-left: 0.3rem;
     width: 93%;
   }
-   input,
-textarea {
-  margin-left: 0;
-  width: 100%;
-}
+
+  input,
+  textarea {
+    margin-left: 0;
+    width: 100%;
+  }
 
   .content-wrapper {
     font-size: 15px;
@@ -932,7 +944,7 @@ textarea {
   }
 
   .vision-image {
-  border-radius: 30px;
+    border-radius: 30px;
     width: 60%;
     height: auto;
     margin: 0;
@@ -952,18 +964,21 @@ textarea {
   h2 {
     font-size: 1.4rem;
   }
+
   h3 {
     font-size: 1.3rem;
   }
-   #contactForm {
+
+  #contactForm {
     margin: 5rem;
     min-width: 80%;
   }
-   input,
-textarea {
-  margin-left: 0;
-  width: 90%;
-}
+
+  input,
+  textarea {
+    margin-left: 0;
+    width: 90%;
+  }
 
 }
 
