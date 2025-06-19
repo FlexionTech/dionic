@@ -63,7 +63,7 @@
       <main>
         <!-- Profile Section -->
         <section id="about">
-          <h2 tabindex="-1"></h2>About</h2>
+          <h2 tabindex="-1">About</h2>
           <p>
             Dr Di Ashworth is the founder of DIONIC. She is a dedicated Social
             Worker with a diverse and rich background in disability support,
@@ -173,13 +173,13 @@
               ></i
             >
           </p>
-          <form
-            id="contactForm"
-            action="https://formspree.io/f/xldbvqek"
-            method="POST"
-            novalidate
-          >
-            <div class="form-group">
+          <div class="form-container">
+            <form
+              id="contactForm"
+              action="https://formspree.io/f/xldbvqek"
+              method="POST"
+              novalidate
+            >
               <label for="firstName"
                 >First Name: <span class="required">*</span></label
               >
@@ -209,9 +209,11 @@
                 >Purpose of Inquiry: <span class="required">*</span></label
               >
               <textarea id="reason" name="reason" rows="4" required></textarea>
-            </div>
-            <button type="submit">Submit</button>
-          </form>
+              <div class="button-wrapper">
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
         </section>
       </main>
 
