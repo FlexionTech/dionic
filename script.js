@@ -150,4 +150,20 @@ document.addEventListener("DOMContentLoaded", function () {
       submitBtn.classList.remove("active");
     }
   });
+
+  // Improved navigation for screen readers
+  const navLinks = document.querySelectorAll('.header-nav a[href^="#"]');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        // Small delay to ensure scroll completes first
+        setTimeout(() => {
+          targetElement.focus();
+        }, 100);
+      }
+    });
+  });
 });

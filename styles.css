@@ -208,8 +208,10 @@ section {
 .contact-form label {
   display: block;
   margin-bottom: 0.5rem;
-  text-align: left; /* <-- This forces left alignment */
+  text-align: left;
+  /* <-- This forces left alignment */
 }
+
 /* =============================
    Footer
 ============================= */
@@ -240,15 +242,16 @@ footer {
 form {
   display: flex;
   flex-direction: column;
-  align-items:flex-start; 
+  align-items: flex-start;
   padding: 2rem;
   border-radius: 8px;
   width: 100%;
   max-width: 600px;
   gap: 1rem;
-  margin:0 auto;
+  margin: 0 auto;
 }
-form > *:first-child {
+
+form>*:first-child {
   margin-top: 0 !important;
 }
 
@@ -262,7 +265,7 @@ label {
 input,
 textarea {
   display: block;
-   width: 100%;
+  width: 100%;
   padding: 0.75rem;
   border-radius: 4px;
   /*width: 800px;*/
@@ -272,6 +275,7 @@ textarea {
   color: var(--text-color);
   margin: 0.5rem;
 }
+
 .button-wrapper {
   display: flex;
   justify-content: center;
@@ -292,7 +296,7 @@ button[type="submit"] {
   font-size: 1rem;
   font-weight: 600;
   background-color: var(--button-bg);
- color: var(--text-color);
+  color: var(--text-color);
   border-radius: 4px;
   cursor: not-allowed;
   transition: background-color 0.3s ease;
@@ -524,17 +528,22 @@ textarea:focus-visible {
   color: #f8f6f3;
 }
 
-h2 {
+h1,
+h2,
+h3 {
+
   font-weight: bold;
   color: var(--title-bar-fg);
   text-align: center;
 }
 
+h2 {
+  font-size: 2rem;
+  ;
+}
+
 
 h3 {
-  font-weight: bold;
-  color: var(--title-bar-fg);
-  text-align: center;
   padding-bottom: 0.5rem;
 }
 
@@ -579,9 +588,11 @@ h3 {
     align-items: center;
     text-align: center;
   }
-html {
+
+  html {
     scroll-padding-top: 60px;
   }
+
   .logo {
     align-items: center;
     height: 24px;
@@ -677,6 +688,7 @@ html {
     align-items: center;
     text-align: center;
   }
+
   html {
     scroll-padding-top: 60px;
   }
@@ -759,7 +771,7 @@ html {
     font-size: 1rem;
   }
 
-  
+
 
   input,
   textarea {
