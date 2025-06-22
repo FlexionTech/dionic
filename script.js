@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const logo = document.getElementById("logo");
   const form = document.getElementById("contactForm");
   const introMessage = document.getElementById("contact-intro");
+  const feedback = document.getElementById("form-feedback");
 
   const sunIcon = `
     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="15" height="14">
@@ -85,24 +86,24 @@ document.addEventListener("DOMContentLoaded", function () {
           introMessage.style.display = "none";
         }
 
-        const successMessage = document.createElement("p");
-        successMessage.textContent =
-          "Thanks for your message! We will connect with you shortly.";
-        successMessage.classList.add("success-message");
-        successMessage.style.color = "green";
-        successMessage.style.marginTop = "1rem";
-
-        form.parentNode.insertBefore(successMessage, form);
-        setTimeout(() => successMessage.classList.add("show"), 10);
-
+        // Clear form fields & prevent auto-refill
+        form.setAttribute("autocomplete", "off");
         form.reset();
-        submitBtn.disabled = true;
-        submitBtn.classList.remove("active");
-
         setTimeout(() => {
-          successMessage.remove();
-          if (introMessage) introMessage.style.display = "block";
-        }, 10000);
+          form.setAttribute("autocomplete", "on");
+        }, 100);
+
+        if (feedback) {
+          feedback.textContent =
+            "Thanks for your message! We will connect with you shortly.";
+          feedback.classList.remove("sr-only");
+
+          setTimeout(() => {
+            feedback.textContent = "";
+            feedback.classList.add("sr-only");
+            if (introMessage) introMessage.style.display = "block";
+          }, 10000);
+        }
       } else {
         form.innerHTML =
           "<p>Oops! There was a problem. Please try again later.</p>";
@@ -153,11 +154,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Improved navigation for screen readers
   const navLinks = document.querySelectorAll('.header-nav a[href^="#"]');
-  navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href').substring(1);
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href").substring(1);
       const targetElement = document.getElementById(targetId);
-      
+
       if (targetElement) {
         // Small delay to ensure scroll completes first
         setTimeout(() => {

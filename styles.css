@@ -78,7 +78,7 @@ html {
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
-  padding: 0.3rem;
+  padding: 1rem;
   box-sizing: border-box;
   padding-block-end: 0.5rem;
   padding-block-start: 0.5rem;
@@ -242,17 +242,15 @@ footer {
 form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 2rem;
+  align-items: center;
   border-radius: 8px;
-  width: 100%;
   max-width: 600px;
   gap: 1rem;
-  margin: 0 auto;
 }
 
 form>*:first-child {
   margin-top: 0 !important;
+  width: 100%;
 }
 
 label {
@@ -265,10 +263,8 @@ label {
 input,
 textarea {
   display: block;
-  width: 100%;
   padding: 0.75rem;
   border-radius: 4px;
-  /*width: 800px;*/
   font-size: 1rem;
   border: 1px solid var(--input-border);
   background-color: var(--text-input);
@@ -376,7 +372,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
 
 .welcome-note {
   font-family: 'Inria Serif', serif;
-  font-weight: bold;
+  font-weight: light;
   text-align: center;
   font-size: 1rem;
   padding: 2rem;
@@ -447,6 +443,34 @@ textarea:focus-visible {
   outline-offset: 2px;
 }
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--text-color);
+  color: var(--background-color);
+  padding: 8px;
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.success-message {
+  color:var(--text-color);
+  margin-top: 1rem;
+}
 /* =============================
    Theme Related Design
 =============================*/
@@ -781,6 +805,10 @@ h3 {
   .services-section {
     padding: 0.5rem;
   }
+  #contactForm {
+    width: 90%;
+  }
+
 
 }
 
@@ -858,7 +886,6 @@ h3 {
     justify-content: center;
     font-size: 0.75rem;
     padding-bottom: 10px;
-    padding-left: 55px;
   }
 
 
@@ -871,7 +898,6 @@ h3 {
   }
 
   #contactForm {
-    margin-left: 0.3rem;
     width: 90%;
   }
 
@@ -920,8 +946,7 @@ h3 {
   }
 
   #contactForm {
-    margin-left: 0.3rem;
-    width: 93%;
+    width: 95%;
   }
 
   input,
@@ -1034,8 +1059,8 @@ h3 {
   }
 
   #contactForm {
-    margin: 5rem;
-    min-width: 80%;
+    padding: 2.5rem;
+    min-width: 85%;
   }
 
   input,
@@ -1060,8 +1085,12 @@ h3 {
   .header-nav {
     font-size: 1.5rem;
     padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
-
+#theme-toggle-btn {
+    right: 0.6rem;
+    padding-top: 5px;
+  }
   .welcome-note {
     font-size: 1.5rem;
     padding-bottom: 1.5rem;
@@ -1085,4 +1114,37 @@ h3 {
     text-align: center;
     padding-left: 1rem;
   }
+
+  
+  input,
+  textarea {
+    margin-left: 0;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 1rem;
+  }
+
+
+  #contactForm {
+    min-width: 60%;
+    margin: 0 auto; /* center horizontally */
+    padding: 2rem; /* reduce padding */
+  }
+
+  #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+
+  #contact-intro {
+    max-width: 600px;
+    text-align: left;
+  }
+
 }
