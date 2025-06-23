@@ -27,7 +27,7 @@
             />
             <h1 class="site-title">DIONIC</h1>
           </div>
-          <nav class="header-nav">
+          <nav id="header-nav" class="header-nav" role="navigation" aria-label="Main navigation">
             <a href="#about-heading">About</a>
             <a href="#vision-heading">Vision</a>
             <a href="#services-heading">Services</a>
@@ -163,7 +163,7 @@
             <i>
               Interested in learning more or have questions? We’d love to hear
               from you. Please reach out via the form below or email us at
-              <a href="mailto:admin@dionic.com.au" class="email"
+              <a href="mailto:admin@dionic.com.au" class="email" aria-label="Send email to admin@dionic.com.au"
                 >admin@dionic.com.au</a
               ></i
             >
@@ -180,7 +180,9 @@
             method="POST"
             novalidate
           >
-            <div class="form-group">
+            <fieldset>
+              <legend>Contact Information</legend>
+              <div class="form-group">
               <label for="firstName"
                 >First Name: <span class="required">*</span></label
               >
@@ -217,20 +219,21 @@
                 >Purpose of Inquiry: <span class="required">*</span></label
               >
               <textarea id="reason" name="reason" rows="4" required></textarea>
-            </div>
+              </div>
+            </fieldset>
             <button type="submit">Submit</button>
           </form>
         </section>
       </main>
 
       <!-- Footer -->
-      <footer role="content-info">
-        <p>
+      <footer role="contentinfo">
+        <address>
           Contact us at:
-          <a href="mailto:admin@dionic.com.au" class="email"
+          <a href="mailto:admin@dionic.com.au" class="email" aria-label="Send email to admin@dionic.com.au"
             >admin@dionic.com.au</a
           >
-        </p>
+        </address>
         <p>&copy; Dr Di Ashworth</p>
       </footer>
     </div>
