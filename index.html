@@ -1,257 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="images/favicon.png" type="image/png" />
-    <title>
-      Dionic - Empowering individuals with vision loss through peer counselling,
-      education, and accessibility services.
-    </title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body data-bs-theme="auto">
-    <div class="content-wrapper">
-      <!-- Header -->
-      <header class="title-bar">
-        <a href="#about-heading" class="skip-link">Skip to main content</a>
-        <div class="title-bar-content">
-          <!-- Brand: logo + title side-by-side -->
-          <div class="brand">
-            <img
-              id="logo"
-              src="images/dionic_logo_light.png"
-              alt="Logo"
-              class="logo"
-            />
-            <h1 class="site-title">DIONIC</h1>
-          </div>
-          <nav
-            id="header-nav"
-            class="header-nav"
-            role="navigation"
-            aria-label="Main navigation"
-          >
-            <a href="#about-heading">About</a>
-            <a href="#vision-heading">Vision</a>
-            <a href="#services-heading">Services</a>
-            <a href="#contact-heading">Contact</a>
-            <!-- Theme Toggle Button -->
-          </nav>
-          <button
-            id="theme-toggle-btn"
-            aria-label="Toggle theme"
-            title="Toggle theme"
-          >
-            <span id="theme-icon"></span>
-          </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  
+  <!-- SEO Meta Tags -->
+  <title>Dionic - Empowering individuals with vision loss through peer counselling, education, and accessibility services</title>
+  <meta name="description" content="DIONIC provides specialized peer counselling, JAWS screen reader training, and accessibility testing services for individuals with vision loss. Founded by Dr Di Ashworth, a Social Worker with lived experience and professional expertise in disability support." />
+  <meta name="keywords" content="vision loss, peer counselling, JAWS training, accessibility testing, disability support, screen reader, NDIS, Vision Australia, social worker, blind, visually impaired" />
+  <meta name="author" content="Dr Di Ashworth" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dionic.com.au" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="DIONIC - Vision Loss Support Services" />
+  <meta property="og:description" content="Empowering individuals with vision loss through peer counselling, education, and accessibility services. Expert support from Dr Di Ashworth." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dionic.com.au" />
+  <meta property="og:image" content="https://dionic.com.au/images/dionic_logo_light.png" />
+  <meta property="og:image:alt" content="DIONIC Logo" />
+  <meta property="og:site_name" content="DIONIC" />
+  <meta property="og:locale" content="en_AU" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DIONIC - Vision Loss Support Services" />
+  <meta name="twitter:description" content="Empowering individuals with vision loss through peer counselling, education, and accessibility services." />
+  <meta name="twitter:image" content="https://dionic.com.au/images/dionic_logo_light.png" />
+  <meta name="twitter:image:alt" content="DIONIC Logo" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "DIONIC",
+    "url": "https://dionic.com.au",
+    "logo": "https://dionic.com.au/images/dionic_logo_light.png",
+    "description": "Empowering individuals with vision loss through peer counselling, education, and accessibility services",
+    "founder": {
+      "@type": "Person",
+      "name": "Dr Di Ashworth",
+      "jobTitle": "Social Worker",
+      "description": "Dedicated Social Worker with expertise in disability support, counselling, education, and research"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+61",
+      "contactType": "customer service",
+      "email": "admin@dionic.com.au"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "AU"
+    },
+    "areaServed": "AU",
+    "serviceType": [
+      "Peer Counselling",
+      "JAWS Screen Reader Training", 
+      "Accessibility Testing"
+    ],
+    "knowsAbout": [
+      "Vision Loss",
+      "Disability Support",
+      "NDIS",
+      "Screen Reader Technology",
+      "Accessibility Testing"
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-bs-theme="auto">
+  <div class="content-wrapper">
+    <!-- Header -->
+    <header class="title-bar">
+      <a href="#about-heading" class="skip-link">Skip to main content</a>
+      <div class="title-bar-content">
+        <!-- Brand: logo + title side-by-side -->
+        <div class="brand">
+          <img id="logo" src="images/dionic_logo_light.png" alt="Logo" class="logo" />
+          <h1 class="site-title">DIONIC</h1>
         </div>
-      </header>
-      <h1>Welcome to Dionic!</h1>
-      <div class="vision-bar">
-        <img
-          src="images/wattle-tree.png"
-          alt="Symbol of wattle representing ‘Growth Strength Resilience’"
-          class="vision-image"
-        />
-        <div class="vision-text">
-          Empowering individuals with vision loss through peer counselling,
-          education, and accessibility services.
-        </div>
+        <nav id="header-nav" class="header-nav" role="navigation" aria-label="Main navigation">
+          <a href="#about-heading">About</a>
+          <a href="#vision-heading">Vision</a>
+          <a href="#services-heading">Services</a>
+          <a href="#contact-heading">Contact</a>
+          <!-- Theme Toggle Button -->
+        </nav>
+        <button id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+          <span id="theme-icon"></span>
+        </button>
       </div>
-      <!-- Main Content -->
-      <main role="main">
-        <!-- Profile Section -->
-        <section id="about" aria-labelledby="about-heading">
-          <h2 id="about-heading" tabindex="-1">About</h2>
-          <p>
-            Dr Di Ashworth is the founder of DIONIC. She is a dedicated Social
-            Worker with a diverse and rich background in disability support,
-            counselling, education, and research. Di brings a holistic and
-            deeply personal perspective to her work, shaped by both professional
-            expertise and lived experience.
-          </p>
-          <p>
-            Her professional journey includes working at the National Disability
-            Insurance Agency (NDIA) as a National Disability Insurance Scheme
-            (NDIS) Planner. In this role, she has gained valuable understanding
-            and experience of the scheme’s support and funding landscape. She
-            has worked at Vision Australia (VA), as coordinator of the Quality
-            Living Support program. In this role, she worked with individuals
-            and groups of people living with vision loss. She has worked at
-            Women’s Information Referral Exchange (WIRE) working with women as
-            Counsellor. She has also worked at Deakin University as lecturer. In
-            this role she taught social work students.
-          </p>
-          <p>
-            Driven by her passion to understand the human experience, her PhD
-            explored young people's identity development. Dr Di Ashworth's
-            commitment to innovation is further highlighted, as a person living
-            with vision loss, participating as the first research participant in
-            the Australian Bionic Eye trial.
-          </p>
-          <p>
-            In addition, she continues to ensure digital spaces are accessible
-            to all, testing their content with the screen reader, JAWS.
-          </p>
-        </section>
-        <section id="vision" aria-labelledby="vision-heading">
-          <h2 id="vision-heading" tabindex="-1">Vision</h2>
-          <p>
-            Dr Di Ashworth’s vision for DIONIC is to work with and provide
-            support for individuals and groups of people living with vision
-            loss, fostering their growth, strength and resilience.
-          </p>
-        </section>
-        <!-- Services Section -->
-        <section
-          id="services"
-          class="services-section"
-          aria-labelledby="services-heading"
-        >
-          <div class="services-container">
-            <h2 id="services-heading" tabindex="-1">Services</h2>
+    </header>
+    <h1>Welcome to Dionic!</h1>
+    <div class="vision-bar">
+      <img src="images/wattle-tree.png" alt="Symbol of wattle representing ‘Growth Strength Resilience’"
+        class="vision-image" />
+      <div class="vision-text">
+        Empowering individuals with vision loss through peer counselling,
+        education, and accessibility services.
+      </div>
+    </div>
+    <!-- Main Content -->
+    <main role="main">
+      <!-- Profile Section -->
+      <section id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading" tabindex="-1">About</h2>
+        <p>
+          Dr Di Ashworth is the founder of DIONIC. She is a dedicated Social
+          Worker with a diverse and rich background in disability support,
+          counselling, education, and research. Di brings a holistic and
+          deeply personal perspective to her work, shaped by both professional
+          expertise and lived experience.
+        </p>
+        <p>
+          Her professional journey includes working at the National Disability
+          Insurance Agency (NDIA) as a National Disability Insurance Scheme
+          (NDIS) Planner. In this role, she has gained valuable understanding
+          and experience of the scheme’s support and funding landscape. She
+          has worked at Vision Australia (VA), as coordinator of the Quality
+          Living Support program. In this role, she worked with individuals
+          and groups of people living with vision loss. She has worked at
+          Women’s Information Referral Exchange (WIRE) working with women as
+          Counsellor. She has also worked at Deakin University as lecturer. In
+          this role she taught social work students.
+        </p>
+        <p>
+          Driven by her passion to understand the human experience, her PhD
+          explored young people's identity development. Dr Di Ashworth's
+          commitment to innovation is further highlighted, as a person living
+          with vision loss, participating as the first research participant in
+          the Australian Bionic Eye trial.
+        </p>
+        <p>
+          In addition, she continues to ensure digital spaces are accessible
+          to all, testing their content with the screen reader, JAWS.
+        </p>
+      </section>
+      <section id="vision" aria-labelledby="vision-heading">
+        <h2 id="vision-heading" tabindex="-1">Vision</h2>
+        <p>
+          Dr Di Ashworth’s vision for DIONIC is to work with and provide
+          support for individuals and groups of people living with vision
+          loss, fostering their growth, strength and resilience.
+        </p>
+      </section>
+      <!-- Services Section -->
+      <section id="services" class="services-section" aria-labelledby="services-heading">
+        <div class="services-container">
+          <h2 id="services-heading" tabindex="-1">Services</h2>
 
-            <div class="cardHolder">
-              <!-- Peer Counselling Card -->
-              <div class="card">
-                <img
-                  src="images/Councelling.svg"
-                  alt="Peer Counselling Icon"
-                  class="service-image"
-                />
-                <div class="service-content">
-                  <h3 class="service-heading">Peer Counselling</h3>
-                  <ul class="service-list">
-                    <li>For those newly diagnosed with vision loss</li>
-                    <li>For people living with vision loss</li>
-                    <li>For people participating in research</li>
-                    <li>For individuals, families, and groups</li>
-                    <li>Support via face-to-face and telehealth</li>
-                  </ul>
-                </div>
+          <div class="cardHolder">
+            <!-- Peer Counselling Card -->
+            <div class="card">
+              <img src="images/Councelling.svg" alt="Peer Counselling Icon" class="service-image" />
+              <div class="service-content">
+                <h3 class="service-heading">Peer Counselling</h3>
+                <ul class="service-list">
+                  <li>For those newly diagnosed with vision loss</li>
+                  <li>For people living with vision loss</li>
+                  <li>For people participating in research</li>
+                  <li>For individuals, families, and groups</li>
+                  <li>Support via face-to-face and telehealth</li>
+                </ul>
               </div>
-              <!-- Education Card -->
-              <div class="card">
-                <img
-                  src="images/Education.svg"
-                  alt="Education"
-                  class="service-image"
-                />
-                <div class="service-content">
-                  <h3 class="service-heading">Education</h3>
-                  <ul class="service-list">
-                    <li>JAWS screen reader training for individuals</li>
-                  </ul>
-                </div>
+            </div>
+            <!-- Education Card -->
+            <div class="card">
+              <img src="images/Education.svg" alt="Education" class="service-image" />
+              <div class="service-content">
+                <h3 class="service-heading">Education</h3>
+                <ul class="service-list">
+                  <li>JAWS screen reader training for individuals</li>
+                </ul>
               </div>
-              <!-- Accessibility Card -->
-              <div class="card">
-                <img
-                  src="images/Accessibility.svg"
-                  alt="Accessibility"
-                  class="service-image"
-                />
-                <div class="service-content">
-                  <h3 class="service-heading">Accessibility</h3>
-                  <ul class="service-list">
-                    <li>Accessibility testing with JAWS</li>
-                    <li>Compliance assessments for organisations</li>
-                  </ul>
-                </div>
+            </div>
+            <!-- Accessibility Card -->
+            <div class="card">
+              <img src="images/Accessibility.svg" alt="Accessibility" class="service-image" />
+              <div class="service-content">
+                <h3 class="service-heading">Accessibility</h3>
+                <ul class="service-list">
+                  <li>Accessibility testing with JAWS</li>
+                  <li>Compliance assessments for organisations</li>
+                </ul>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Contact Section -->
-        <section id="contact" aria-labelledby="contact-heading">
-          <h2 id="contact-heading" tabindex="-1">Contact</h2>
-          <p id="contact-intro">
-            <i>
-              Interested in learning more or have questions? We’d love to hear
-              from you. Please reach out via the form below or email us.</i
-            >
-          </p>
-          <p
-            id="form-feedback"
-            aria-live="polite"
-            class="sr-only"
-            tabindex="-1"
-          ></p>
-          <form
-            id="contactForm"
-            action="https://formspree.io/f/xldbvqek"
-            method="POST"
-            novalidate
-          >
-            <fieldset>
-              <legend>Contact Information</legend>
-              <div class="form-group">
-                <label for="firstName"
-                  >First Name: <span class="required">*</span></label
-                >
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  required
-                  autocomplete="off"
-                  aria-required="true"
-                />
+      <!-- Contact Section -->
+      <section id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" tabindex="-1">Contact</h2>
+        <p id="contact-intro">
+          <i>
+            Interested in learning more or have questions? We’d love to hear
+            from you. Please reach out via the form below or email us.</i>
+        </p>
+        <p id="form-feedback" aria-live="polite" class="sr-only" tabindex="-1"></p>
+        <form id="contactForm" action="https://formspree.io/f/xldbvqek" method="POST" novalidate>
+          <fieldset class="form-group">
 
-                <label for="lastName"
-                  >Last Name: <span class="required">*</span></label
-                >
-                <input type="text" id="lastName" name="lastName" required />
+            <label for="firstName">First Name: <span class="required">*</span></label>
+            <input type="text" id="firstName" name="firstName" required autocomplete="off" aria-required="true" />
 
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required />
+            <label for="lastName">Last Name: <span class="required">*</span></label>
+            <input type="text" id="lastName" name="lastName" required />
 
-                <label for="contactNumber"
-                  >Contact Number: <span class="required">*</span></label
-                >
-                <input
-                  type="tel"
-                  id="contactNumber"
-                  name="contactNumber"
-                  pattern="^\+?[0-9]{1,4}[0-9\s\-()]{6,}$"
-                  required
-                  title="Enter a valid phone number with optional country code, e.g. +1 234-567-8900 or (123) 456 7890"
-                />
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required />
 
-                <label for="reason"
-                  >Purpose of Inquiry: <span class="required">*</span></label
-                >
-                <textarea
-                  id="reason"
-                  name="reason"
-                  rows="4"
-                  required
-                ></textarea>
-              </div>
-            </fieldset>
-            <button type="submit">Submit</button>
-          </form>
-        </section>
-      </main>
+            <label for="contactNumber">Contact Number: <span class="required">*</span></label>
+            <input type="tel" id="contactNumber" name="contactNumber" pattern="^\+?[0-9]{1,4}[0-9\s\-()]{6,}$" required
+              title="Enter a valid phone number with optional country code, e.g. +1 234-567-8900 or (123) 456 7890" />
 
-      <!-- Footer -->
-      <footer role="contentinfo">
-        <address>
-          Contact us at:
-          <a
-            href="mailto:admin@dionic.com.au"
-            class="email"
-            aria-label="Send email to admin@dionic.com.au"
-            >admin@dionic.com.au</a
-          >
-        </address>
-        <p>&copy; Dr Di Ashworth</p>
-      </footer>
-    </div>
-    <!-- Theme Toggle Script -->
-    <script src="script.js" defer></script>
-  </body>
+            <label for="reason">Purpose of Inquiry: <span class="required">*</span></label>
+            <textarea id="reason" name="reason" rows="4" required></textarea>
+
+          </fieldset>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <address>
+        Contact us at:
+        <a href="mailto:admin@dionic.com.au" class="email"
+          aria-label="Send email to admin@dionic.com.au">admin@dionic.com.au</a>
+      </address>
+      <p>&copy; Dr Di Ashworth</p>
+    </footer>
+  </div>
+  <!-- Theme Toggle Script -->
+  <script src="script.js" defer></script>
+</body>
+
 </html>
