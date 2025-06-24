@@ -33,6 +33,13 @@
   --input-border: rgba(74, 97, 15, 0.3);
   --footer-color: #454B1B;
   --logo: url('images/dionic_logo_light.png');
+  --background: linear-gradient(to top,
+      #e2d8bf 0%,
+      rgba(197, 199, 186, 0) 100%);
+  --headerNavAColor: #3c8123;
+ --h3BorderBottom: 1px solid rgba(74, 97, 15, 0.3);
+ --emailColor: #4b1b42;
+  --emailHoverColor: #ff005d;
 }
 
 [data-bs-theme="dark"] {
@@ -49,6 +56,15 @@
   --input-border: rgba(238, 225, 225, 0.3);
   --footer-color: #aaa;
   --logo: url('images/dionic_logo_dark.png');
+  --box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+  --filter: drop-shadow(0 0 6px rgba(236, 195, 82, 0.907));
+  --background: linear-gradient(to top,
+      #141702c4 0%,
+      rgba(181, 0, 12, 0) 100%);
+  --headerNavAColor: #85a58e;
+  --h3BorderBottom: 1px solid rgba(238, 225, 225, 0.3);
+--emailColor: #aaa;
+  --emailHoverColor: #f8f6f3;
 }
 
 
@@ -109,9 +125,10 @@ body::before {
   top: 0;
   line-height: 1;
   width: 100%;
-  background: var(--background-color);
+  background: var(--background);
   backdrop-filter: blur(8px);
   z-index: 1000;
+  font-weight: bold;
 }
 
 .title-bar-content {
@@ -149,7 +166,6 @@ body::before {
 }
 
 .header-nav {
-  color: #e22c35;
   font-weight: 300;
   display: flex;
   align-items: center;
@@ -159,9 +175,17 @@ body::before {
 
 .header-nav a {
   position: relative;
+  color: var(--title-bar-fg);
+  text-decoration: none;
+  font-weight: light;
 
 }
-
+.header-nav a:hover{
+  color: var(--headerNavAColor);
+  text-decoration: underline;
+  font-weight: light;
+  transition: all 0.6s ease;
+}
 
 .header-nav a:not(:last-child)::after {
   content: "-";
@@ -192,6 +216,8 @@ section {
   z-index: 1000;
   padding: 0.1rem;
   transform: translateY(-50%);
+  color:var(--text-color);
+  filter:var(--filter);
 }
 
 #theme-icon svg {
@@ -351,6 +377,9 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: 900px;
+  overflow-x: hidden;
+   background-color: var(--card-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .vision-image {
@@ -369,6 +398,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   text-align: center;
   font-size: 1rem;
   flex: 1;
+  color: var(--title-bar-fg);
 }
 
 .welcome-note {
@@ -377,6 +407,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   text-align: center;
   font-size: 1rem;
   padding: 2rem;
+  color: var(--title-bar-fg);
 }
 
 
@@ -397,6 +428,8 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   flex: 1;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .card {
@@ -409,7 +442,7 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  box-shadow: var(--box-shadow);
 }
 
 
@@ -422,9 +455,6 @@ input:not(#firstName):not(#lastName):not(#contactNumber):focus:invalid {
   margin: 5%;
 }
 
-.service-content {
-  padding: 1rem;
-}
 
 .service-heading {
   font-weight: bold;
@@ -462,7 +492,6 @@ textarea:focus-visible {
   width: 1px;
   height: 1px;
   padding: 0;
-  overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
@@ -472,85 +501,15 @@ textarea:focus-visible {
   color:var(--text-color);
   margin-top: 1rem;
 }
-/* =============================
-   Theme Related Design
-=============================*/
 
-[data-bs-theme="dark"] .card {
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
-}
-
-
-[data-bs-theme="dark"] #theme-toggle-btn {
-  color: #f1e7d1;
-  filter: drop-shadow(0 0 6px rgba(236, 195, 82, 0.907));
-}
-
-[data-bs-theme="light"] #theme-toggle-btn {
-  color: #1d3d04;
-  filter: drop-shadow(0 0 6px rgba(252, 253, 253, 0.538));
-}
-
-[data-bs-theme="light"] .title-bar {
-  font-weight: bold;
-  background: linear-gradient(to top,
-      #e2d8bf 0%,
-      rgba(197, 199, 186, 0) 100%);
-}
-
-[data-bs-theme="dark"] .title-bar {
-  background: linear-gradient(to top,
-      #141702c4 0%,
-      rgba(181, 0, 12, 0) 100%);
-}
-
-
-[data-bs-theme="dark"] .header-nav a {
-  color: var(--title-bar-fg);
-  text-decoration: none;
-  font-weight: light;
-}
-
-[data-bs-theme="light"] .header-nav a {
-  color: var(--title-bar-fg);
-  text-decoration: none;
-  font-weight: light;
-}
-
-[data-bs-theme="dark"] .header-nav a:hover {
-  color: #85a58e;
-  text-decoration: underline;
-  font-weight: light;
-  transition: all 0.6s ease;
-}
-
-
-
-[data-bs-theme="light"] .header-nav a:hover {
-  color: #707003;
-  text-decoration: underline;
-  font-weight: light;
-  transition: all 0.6s ease;
-}
-
-[data-bs-theme="dark"] .email {
-  color: #aaa;
+.email {
+  color: var(--emailColor);
   text-decoration: none;
 }
 
-[data-bs-theme="light"] .email {
-  color: #454B1B;
-  text-decoration: none;
-}
-
-[data-bs-theme="light"] .email:hover {
+.email:hover {
+  color:var(--emailHoverColor);
   text-decoration: underline;
-  color: #ff005d;
-}
-
-[data-bs-theme="dark"] .email:hover {
-  text-decoration: underline;
-  color: #f8f6f3;
 }
 
 h1,
@@ -564,44 +523,27 @@ h3 {
 
 h2 {
   font-size: 2rem;
-  ;
 }
 
 
 h3 {
   padding-bottom: 0.5rem;
-}
-
-[data-bs-theme="dark"] h3 {
-  border-bottom: 1px solid rgba(238, 225, 225, 0.3);
-}
-
-[data-bs-theme="light"] h3 {
-  border-bottom: 1px solid rgba(74, 97, 15, 0.3);
-}
-
-.vision-bar {
-  background-color: var(--card-color);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-[data-bs-theme="light"] .vision-text {
-  color: #1d2213;
-}
-
-[data-bs-theme="light"] .welcome-note {
-  color: #1d2213;
+  border-bottom: var(--h3BorderBottom);
 }
 
 
-
-[data-bs-theme="dark"] .vision-text {
-  color: var(--title-bar-fg);
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-inline-size: unset; /* Optional: prevent it from being too wide */
 }
 
-[data-bs-theme="dark"] .welcome-note {
-  color: var(--title-bar-fg);
+legend{
+  text-align: center;
 }
+
+
 
 
 
@@ -1146,6 +1088,7 @@ h3 {
   #contact-intro {
     max-width: 600px;
     text-align: left;
+    margin-bottom: 0;
   }
 
 }
