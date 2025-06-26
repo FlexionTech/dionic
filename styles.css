@@ -85,7 +85,7 @@ html {
   color: var(--text-color);
   z-index: 1;
   scroll-behavior: smooth;
-   scroll-padding-top: 100px;
+   scroll-padding-top: 90px;
 
 }
 
